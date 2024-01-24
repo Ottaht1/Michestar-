@@ -4,9 +4,9 @@ export const backendUrl = import.meta.env.VITE_API_ENDPOINT
 
 const routes = {
     home: '/',
-    download: '/download',
+    products: '/products',
     cards: '/cards',
-    signup:'/users/create',
+    pricing:'/pricing',
 }
 
 

@@ -7,8 +7,9 @@ import {
 } from "react-router-dom";
 import './index.css'
 import config from './utils/config.js';
-import DownloadPage from './pages/DownloadPage.jsx';
 import CardsPage from './pages/CardsPage.jsx';
+import ProductPage from './pages/ProductPage.jsx';
+import PricingPage from './pages/PricingPage.jsx';
 
 const { routes } = config
 
@@ -18,12 +19,16 @@ const router = createBrowserRouter([
     element: <App />,
   },
   {
-    path: routes.download,
-    element: <DownloadPage />,
+    path: routes.products,
+    element: <ProductPage />,
   },
   {
     path: routes.cards,
     element: <CardsPage />,
+  },
+  {
+    path: routes.pricing,
+    element: <PricingPage />,
   },
 ]);
 

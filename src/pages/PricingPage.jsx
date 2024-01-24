@@ -1,7 +1,7 @@
 import React from 'react'
 import Navbar from '../components/Navbar'
 
-const CardsPage = () => {
+const PricingPage = () => {
   return (
     <>
     <Navbar />
@@ -10,4 +10,4 @@ const CardsPage = () => {
   )
 }
 
-export default CardsPage
+export default PricingPage
