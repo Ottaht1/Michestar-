@@ -7,9 +7,9 @@ import {
 } from "react-router-dom";
 import './index.css'
 import config from './utils/config.js';
-import CardsPage from './pages/CardsPage.jsx';
-import ProductPage from './pages/ProductPage.jsx';
-import PricingPage from './pages/PricingPage.jsx';
+import ServicesPage from './pages/Services.jsx';
+import AboutUsPage from './pages/AboutUs.jsx';
+import ContactUsPage from './pages/ContactUs.jsx';
 
 const { routes } = config
 
@@ -19,16 +19,16 @@ const router = createBrowserRouter([
     element: <App />,
   },
   {
-    path: routes.products,
-    element: <ProductPage />,
+    path: routes.about,
+    element: <AboutUsPage />,
   },
   {
-    path: routes.cards,
-    element: <CardsPage />,
+    path: routes.services,
+    element: <ServicesPage />,
   },
   {
-    path: routes.pricing,
-    element: <PricingPage />,
+    path: routes.contact,
+    element: <ContactUsPage />,
   },
 ]);
 

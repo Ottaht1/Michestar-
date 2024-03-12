@@ -1,29 +1,27 @@
-import React from 'react'
-import { Fragment } from 'react'
-import { Disclosure, Menu, Transition } from '@headlessui/react'
-import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline'
-import { ILogo } from '../utils/icons.utils'
-import { NavLink, Link, useLocation } from 'react-router-dom';
-import config from '../utils/config'
-import IconButton from './Button'
+import React from "react";
+import { Disclosure, Menu, Transition } from "@headlessui/react";
+import { Bars3Icon, BellIcon, XMarkIcon } from "@heroicons/react/24/outline";
+import { ILogo } from "../utils/icons.utils";
+import { NavLink, Link, useLocation } from "react-router-dom";
+import config from "../utils/config";
 
-const { routes } = config
+
+const { routes } = config;
 
 const navigation = [
-  { name: 'Home', href: routes.home },
-  { name: 'Products', href: routes.products },
-  { name: 'Cards', href: routes.cards },
-  { name: 'Pricing', href: routes.pricing },
+  { name: "Home", href: routes.home },
+  { name: "About Us", href: routes.about },
+  { name: "Services", href: routes.services },
+  {name: "Contact Us", href: routes.contact},
 ];
 
-
 function classNames(...classes) {
-  return classes.filter(Boolean).join(' ')
+  return classes.filter(Boolean).join(" ");
 }
 
 export default function Navbar() {
   return (
-    <Disclosure as="nav" className="bg-[#F4F6F6] w-11/12 m-auto my-6 rounded-full">
+    <Disclosure as="nav" className=" w-11/12 m-auto my-6 rounded-full">
       {({ open }) => (
         <>
           <div className="mx-auto min-w-7xl px-2 sm:px-6 lg:px-4">
@@ -42,11 +40,7 @@ export default function Navbar() {
               </div>
               <div className="flex flex-1 items-center justify-center sm:justify-between">
                 <div className="flex flex-shrink-0 items-center">
-                  <img
-                    className="h-11 w-auto"
-                    src={ILogo}
-                    alt="Your Company"
-                  />
+                  <img className="h-11 w-auto" src={ILogo} alt="Your Company" />
                 </div>
                 <div className="hidden sm:ml-6 sm:block">
                   <div className="flex space-x-4">
@@ -54,29 +48,26 @@ export default function Navbar() {
                       <NavLink
                         key={item.name}
                         to={item.href}
-                        className={`text-[#030508]  hover:bg-[#062F3F] hover:text-white rounded-full px-8 py-3 text-base font-medium ${location.pathname === item.href
-                            ? 'bg-[#062F3F] text-white '
-                            : 'text-[#030508]'
-                          }`}
+                        className={`text-white   hover:text-[#FFA500]  r px-8 py-3 text-base font-medium ${
+                          location.pathname === item.href
+                            ? " text-[#FFA500]  "
+                            : "text-white"
+                        }`}
                       >
                         {item.name}
                       </NavLink>
                     ))}
                   </div>
-
                 </div>
-                <div className='flex h-11'>
-                  <button type="button" 
-                    className="border-[#83979F] text-[#062F3F] text-base hover:border-[#83979F] border-2 px-5 rounded-full">Login</button>
-                <IconButton
-                  onClick={() => console.log('Button clicked')}
-                  label="Get started"
-                  iconLeft={true}
-                  iconRight={true}
-                />
-                </div>
+                {/* <div className="flex h-11">
+                  <button
+                    type="button"
+                    className="bg-[#FFA500]  text-white text-base hover:border-[#83979F] border-2 px-5 rounded-full"
+                  >
+                    Contact Us
+                  </button>
+                </div> */}
               </div>
-
             </div>
           </div>
 
@@ -86,10 +77,11 @@ export default function Navbar() {
                 <Link
                   key={item.name}
                   to={item.href}
-                  className={`block rounded-md px-3 py-2 text-base font-medium ${location.pathname === item.href
-                      ? 'bg-gray-900 text-white'
-                      : 'text-white hover:bg-gray-700 hover:text-white'
-                    }`}
+                  className={`block rounded-md px-3 py-2 text-base font-medium ${
+                    location.pathname === item.href
+                      ? "bg-gray-900 text-white"
+                      : "text-white hover:bg-gray-700 hover:text-white"
+                  }`}
                 >
                   {item.name}
                 </Link>
@@ -99,5 +91,5 @@ export default function Navbar() {
         </>
       )}
     </Disclosure>
-  )
+  );
 }

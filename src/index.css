@@ -9,10 +9,7 @@
 
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
-  background: 
-  radial-gradient(circle at 30% 90%, #DBEFF0 2%, transparent 20%),
-  radial-gradient(circle at 75% 50%, #DBEFF0 2%, transparent 20%),
-  linear-gradient(to bottom, #FFFFFF, #FFFFFF);
+  background: rgb( 30, 30, 30) ;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -49,7 +46,7 @@ button {
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
-  background-color: #1a1a1a;
+  /* background-color: #1a1a1a; */
   cursor: pointer;
   transition: border-color 0.25s;
 }
