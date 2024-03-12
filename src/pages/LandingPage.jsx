@@ -13,38 +13,34 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
 import { Pagination } from "swiper/modules";
+import image from "../assets/background.svg";
 
 const LandingPage = () => {
   return (
     <>
       <Navbar />
+      <section className="text-gray-600 body-font" style={{ backgroundImage: `url(${image})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
+  <div className="container mx-auto flex px-5 py-24 md:flex-row flex-col items-center">
+    <div className="lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center text-center">
+      <h1 className="title-font sm:text-4xl text-3xl mb-4 font-medium text-white">
+        We Audit, Protect, <br /> Analyze And <br /> Automate Your <br /> Data.
+      </h1>
+      <p className="mb-8 leading-relaxed text-white">
+        We have a deep understanding of <br /> data privacy, security,
+        automation <br /> and analysis.
+      </p>
+      <div className="flex justify-center">
+        <button className="inline-flex text-white border-2 border-gray-400 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg">
+          Contact Us
+        </button>
+      </div>
+    </div>
+    <div className="lg:max-w-xl lg:w-full md:w-3/4 w-full">
+      <img src={landingpagewoman} alt="Description of the image" className="w-full h-auto" />
+    </div>
+  </div>
+</section>
 
-      <section className="text-gray-600 body-font">
-        <div className="container mx-auto flex px-5 py-24 md:flex-row flex-col items-center">
-          <div className="lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center text-center">
-            <h1 className="title-font sm:text-4xl text-3xl mb-4 font-medium text-white">
-              We Audit, Protect, <br /> Analyze And <br /> Automate Your <br />{" "}
-              Data.
-            </h1>
-            <p className="mb-8 leading-relaxed text-white">
-              We have a deep understanding of <br /> data privacy, security,
-              automation <br /> and analysis.
-            </p>
-            <div className="flex justify-center">
-              <button className="inline-flex text-white border-2 border-gray-400 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg">
-                Contact Us
-              </button>
-            </div>
-          </div>
-          <div className="lg:max-w-xl lg:w-full md:w-3/4 w-full">
-            <img
-              src={landingpagewoman}
-              alt="Description of the image"
-              className="w-full h-auto"
-            />
-          </div>
-        </div>
-      </section>
 
       <section className="text-gray-600 body-font">
         <div className="container mx-auto flex px-5 py-24 md:flex-row flex-col items-center">
