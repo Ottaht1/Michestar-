@@ -55,12 +55,13 @@ const LandingPage = () => {
         </div>
       </section>
 
-      <section className="text-gray-600 body-font"
-      style={{
-        backgroundImage: `url(${Eclipse})`,
-        backgroundSize: "105rem",
-        backgroundPosition: "right",
-      }}
+      <section
+        className="text-gray-600 body-font"
+        style={{
+          backgroundImage: `url(${Eclipse})`,
+          backgroundSize: "105rem",
+          backgroundPosition: "right",
+        }}
       >
         <div className="container mx-auto flex px-5 py-24 md:flex-row flex-col items-center">
           <div className="lg:max-w-2xl lg:w-full md:w-3/4 w-full mb-10 md:mb-0">
