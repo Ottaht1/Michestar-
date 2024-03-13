@@ -6,41 +6,54 @@ import landingpageman from "../assets/landingpageman.svg";
 import image1 from "../assets/Paymi.svg";
 import image2 from "../assets/fairsure.svg";
 import image3 from "../assets/freewave.svg";
-import rating from "../assets/ratingstar.svg";
 import asterick from "../assets/asterick.svg";
-import icon1 from "../assets/purplecheck.svg";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
 import { Pagination } from "swiper/modules";
 import image from "../assets/background.svg";
+import Eclipse from "../assets/Eclipse.svg";
+import pngtree from "../assets/pngtreegradient.svg";
+import persona1 from "../assets/images/tunde.svg";
+import persona2 from "../assets/images/femi.svg";
 
 const LandingPage = () => {
   return (
     <>
       <Navbar />
-      <section className="text-gray-600 body-font" style={{ backgroundImage: `url(${image})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
-  <div className="container mx-auto flex px-5 py-24 md:flex-row flex-col items-center">
-    <div className="lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center text-center">
-      <h1 className="title-font sm:text-4xl text-3xl mb-4 font-medium text-white">
-        We Audit, Protect, <br /> Analyze And <br /> Automate Your <br /> Data.
-      </h1>
-      <p className="mb-8 leading-relaxed text-white">
-        We have a deep understanding of <br /> data privacy, security,
-        automation <br /> and analysis.
-      </p>
-      <div className="flex justify-center">
-        <button className="inline-flex text-white border-2 border-gray-400 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg">
-          Contact Us
-        </button>
-      </div>
-    </div>
-    <div className="lg:max-w-xl lg:w-full md:w-3/4 w-full">
-      <img src={landingpagewoman} alt="Description of the image" className="w-full h-auto" />
-    </div>
-  </div>
-</section>
-
+      <section
+        className="text-gray-600 body-font"
+        style={{
+          backgroundImage: `url(${image})`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+        }}
+      >
+        <div className="container mx-auto flex px-5 py-24 md:flex-row flex-col items-center">
+          <div className="lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center text-center">
+            <h1 className="title-font sm:text-4xl text-3xl mb-4 font-medium text-white">
+              We Audit, Protect, <br /> Analyze And <br /> Automate Your <br />{" "}
+              Data.
+            </h1>
+            <p className="mb-8 leading-relaxed text-white">
+              We have a deep understanding of <br /> data privacy, security,
+              automation <br /> and analysis.
+            </p>
+            <div className="flex justify-center">
+              <button className="inline-flex text-white border-2 border-gray-400 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg">
+                Contact Us
+              </button>
+            </div>
+          </div>
+          <div className="lg:max-w-xl lg:w-full md:w-3/4 w-full">
+            <img
+              src={landingpagewoman}
+              alt="Description of the image"
+              className="w-full h-auto"
+            />
+          </div>
+        </div>
+      </section>
 
       <section className="text-gray-600 body-font">
         <div className="container mx-auto flex px-5 py-24 md:flex-row flex-col items-center">
@@ -178,197 +191,140 @@ const LandingPage = () => {
       </section>
 
       <section className="text-gray-600 w-full body-font">
-        <div className="container px-5 py-24 mx-auto ">
-          <div className="flex flex-wrap ">
+        <div className="container px-5 py-24 mx-auto">
+          <div className="flex flex-wrap justify-center">
             <Swiper
               modules={[Pagination]}
-              spaceBetween={50}
-              slidesPerView={3}
+              spaceBetween={20}
+              slidesPerView={1}
               pagination={{ clickable: true }}
+              breakpoints={{
+                640: {
+                  slidesPerView: 1,
+                },
+                768: {
+                  slidesPerView: 2,
+                },
+                1024: {
+                  slidesPerView: 2,
+                },
+              }}
               onSwiper={(swiper) => console.log(swiper)}
               onSlideChange={() => console.log("slide change")}
             >
               <SwiperSlide>
-                <div className="p-4  w-full item">
-                  <div className="h-full bg-gray-800 p-8 rounded">
-                    <h1 className="text-3xl font-medium title-font text-[#AECBFA] mb-12 text-center">
+                <div className="w-full item">
+                  <div
+                    className="h-auto bg-[#383D51] p-8 rounded"
+                    style={{
+                      backgroundImage: `url(${Eclipse})`,
+                      backgroundSize: "cover",
+                      backgroundPosition: "center",
+                    }}
+                  >
+                    <h1 className="text-xl font-medium title-font text-[#AECBFA] text-center mb-4">
                       What Our Clients Say About Us
                     </h1>
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="currentColor"
-                      className="block w-5 h-5 text-gray-400 mb-4"
-                      viewBox="0 0 975.036 975.036"
-                    >
-                      <path d="M925.036 57.197h-304c-27.6 0-50 22.4-50 50v304c0 27.601 22.4 50 50 50h145.5c-1.9 79.601-20.4 143.3-55.4 191.2-27.6 37.8-69.399 69.1-125.3 93.8-25.7 11.3-36.8 41.7-24.8 67.101l36 76c11.6 24.399 40.3 35.1 65.1 24.399 66.2-28.6 122.101-64.8 167.7-108.8 55.601-53.7 93.7-114.3 114.3-181.9 20.601-67.6 30.9-159.8 30.9-276.8v-239c0-27.599-22.401-50-50-50zM106.036 913.497c65.4-28.5 121-64.699 166.9-108.6 56.1-53.7 94.4-114.1 115-181.2 20.6-67.1 30.899-159.6 30.899-277.5v-239c0-27.6-22.399-50-50-50h-304c-27.6 0-50 22.4-50 50v304c0 27.601 22.4 50 50 50h145.5c-1.9 79.601-20.4 143.3-55.4 191.2-27.6 37.8-69.4 69.1-125.3 93.8-25.7 11.3-36.8 41.7-24.8 67.101l35.9 75.8c11.601 24.399 40.501 35.2 65.301 24.399z"></path>
-                    </svg>
-                    <p className="leading-relaxed mb-6">
-                      Synth chartreuse iPhone lomo cray raw denim brunch
-                      everyday carry neutra before they sold out fixie 90's
-                      microdosing. Tacos pinterest fanny pack venmo, post-ironic
-                      heirloom try-hard pabst authentic iceland.
+                    <div className="flex justify-center items-center mb-4">
+                      {[...Array(5)].map((_, index) => (
+                        <svg
+                          key={index}
+                          width="20"
+                          height="20"
+                          viewBox="0 0 20 20"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                          className="mx-1"
+                        >
+                          <path
+                            d="M9.99996 0.666656L12.9 7.33331L20 8L14.6666 12.3333L16.3333 19.3333L9.99996 15.6667L3.66663 19.3333L5.33329 12.3333L0 8L7.09996 7.33331L9.99996 0.666656Z"
+                            fill="#ED892D"
+                          />
+                        </svg>
+                      ))}
+                    </div>
+                    <p className="text-gray-100 mb-4">
+                      "Working with Michestar has been a transformative
+                      experience for our organization. Their expertise in data
+                      protection compliance in Nigeria is second to none. The
+                      team at Michestar demonstrated a deep understanding of the
+                      regulatory landscape, providing us with tailored solutions
+                      that not only ensured compliance but also enhanced the
+                      overall security of our data."
                     </p>
-                    <a className="items-center">
+                    <div className="flex flex-col items-center">
                       <img
                         alt="testimonial"
-                        src="https://dummyimage.com/106x106"
-                        className="w-12 h-12 rounded-full flex-shrink-0 object-cover object-center items-center mx-28"
+                        src={persona1}
+                        className="w-12 h-12 rounded-full flex-shrink-0 object-cover object-center mb-2"
                       />
-                      <span className="flex-grow flex flex-col text-center ">
-                        <span className="title-font font-medium text-gray-900">
-                          Holden Caulfield
+                      <span className="flex-grow flex flex-col text-center">
+                        <span className="title-font font-bold text-white">
+                          Tunde Alabi
                         </span>
-                        <span className="text-gray-500 text-sm">
-                          UI DEVELOPER
-                        </span>
+                        <span className="text-white text-sm">Babcock MFB</span>
                       </span>
-                    </a>
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="currentColor"
-                      className="block w-5 h-5 text-gray-400 mb-4 ml-[90%]"
-                      viewBox="0 0 975.036 975.036"
-                    >
-                      <path d="M925.036 57.197h-304c-27.6 0-50 22.4-50 50v304c0 27.601 22.4 50 50 50h145.5c-1.9 79.601-20.4 143.3-55.4 191.2-27.6 37.8-69.399 69.1-125.3 93.8-25.7 11.3-36.8 41.7-24.8 67.101l36 76c11.6 24.399 40.3 35.1 65.1 24.399 66.2-28.6 122.101-64.8 167.7-108.8 55.601-53.7 93.7-114.3 114.3-181.9 20.601-67.6 30.9-159.8 30.9-276.8v-239c0-27.599-22.401-50-50-50zM106.036 913.497c65.4-28.5 121-64.699 166.9-108.6 56.1-53.7 94.4-114.1 115-181.2 20.6-67.1 30.899-159.6 30.899-277.5v-239c0-27.6-22.399-50-50-50h-304c-27.6 0-50 22.4-50 50v304c0 27.601 22.4 50 50 50h145.5c-1.9 79.601-20.4 143.3-55.4 191.2-27.6 37.8-69.4 69.1-125.3 93.8-25.7 11.3-36.8 41.7-24.8 67.101l35.9 75.8c11.601 24.399 40.501 35.2 65.301 24.399z"></path>
-                    </svg>
+                    </div>
                   </div>
                 </div>
               </SwiperSlide>
+
               <SwiperSlide>
-                <div className="p-4  w-full item">
-                  <div className="h-full bg-gray-800 p-8 rounded">
-                    <h1 className="text-3xl font-medium title-font text-[#AECBFA] mb-12 text-center">
+                <div className="w-full item">
+                  <div
+                    className="h-auto bg-[#383D51] p-8 rounded"
+                    style={{
+                      backgroundImage: `url(${Eclipse})`,
+                      backgroundSize: "cover",
+                      backgroundPosition: "center",
+                    }}
+                  >
+                    <h1 className="text-xl font-medium title-font text-[#AECBFA] text-center mb-4">
                       What Our Clients Say About Us
                     </h1>
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="currentColor"
-                      className="block w-5 h-5 text-gray-400 mb-4"
-                      viewBox="0 0 975.036 975.036"
-                    >
-                      <path d="M925.036 57.197h-304c-27.6 0-50 22.4-50 50v304c0 27.601 22.4 50 50 50h145.5c-1.9 79.601-20.4 143.3-55.4 191.2-27.6 37.8-69.399 69.1-125.3 93.8-25.7 11.3-36.8 41.7-24.8 67.101l36 76c11.6 24.399 40.3 35.1 65.1 24.399 66.2-28.6 122.101-64.8 167.7-108.8 55.601-53.7 93.7-114.3 114.3-181.9 20.601-67.6 30.9-159.8 30.9-276.8v-239c0-27.599-22.401-50-50-50zM106.036 913.497c65.4-28.5 121-64.699 166.9-108.6 56.1-53.7 94.4-114.1 115-181.2 20.6-67.1 30.899-159.6 30.899-277.5v-239c0-27.6-22.399-50-50-50h-304c-27.6 0-50 22.4-50 50v304c0 27.601 22.4 50 50 50h145.5c-1.9 79.601-20.4 143.3-55.4 191.2-27.6 37.8-69.4 69.1-125.3 93.8-25.7 11.3-36.8 41.7-24.8 67.101l35.9 75.8c11.601 24.399 40.501 35.2 65.301 24.399z"></path>
-                    </svg>
-                    <p className="leading-relaxed mb-6">
-                      Synth chartreuse iPhone lomo cray raw denim brunch
-                      everyday carry neutra before they sold out fixie 90's
-                      microdosing. Tacos pinterest fanny pack venmo, post-ironic
-                      heirloom try-hard pabst authentic iceland.
+                    <div className="flex justify-center items-center mb-4">
+                      {[...Array(5)].map((_, index) => (
+                        <svg
+                          key={index}
+                          width="20"
+                          height="20"
+                          viewBox="0 0 20 20"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                          className="mx-1"
+                        >
+                          <path
+                            d="M9.99996 0.666656L12.9 7.33331L20 8L14.6666 12.3333L16.3333 19.3333L9.99996 15.6667L3.66663 19.3333L5.33329 12.3333L0 8L7.09996 7.33331L9.99996 0.666656Z"
+                            fill="#ED892D"
+                          />
+                        </svg>
+                      ))}
+                    </div>
+                    <p className="text-gray-100 mb-4">
+                      "Absolutely fantastic service from Michestar! As a
+                      business owner in Nigeria, I understand the critical
+                      importance of data security. That's why I turned to
+                      Michestar, and they did not disappoint. Their team went
+                      above and beyond. With their expertise, I can confidently
+                      say that our sensitive information is in trusted hands.
+                      Highly recommend Michestar to anyone serious about data
+                      protection in Nigeria."
                     </p>
-                    <a className="items-center">
+                    <div className="flex flex-col items-center">
                       <img
                         alt="testimonial"
-                        src="https://dummyimage.com/106x106"
-                        className="w-12 h-12 rounded-full flex-shrink-0 object-cover object-center items-center mx-28"
+                        src={persona2}
+                        className="w-12 h-12 rounded-full flex-shrink-0 object-cover object-center mb-2"
                       />
-                      <span className="flex-grow flex flex-col text-center ">
-                        <span className="title-font font-medium text-gray-900">
-                          Holden Caulfield
+                      <span className="flex-grow flex flex-col text-center">
+                        <span className="title-font font-bold text-white">
+                          Femi Alabi
                         </span>
-                        <span className="text-gray-500 text-sm">
-                          UI DEVELOPER
+                        <span className="text-white text-sm">
+                          Paymi Solutions
                         </span>
                       </span>
-                    </a>
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="currentColor"
-                      className="block w-5 h-5 text-gray-400 mb-4 ml-[90%]"
-                      viewBox="0 0 975.036 975.036"
-                    >
-                      <path d="M925.036 57.197h-304c-27.6 0-50 22.4-50 50v304c0 27.601 22.4 50 50 50h145.5c-1.9 79.601-20.4 143.3-55.4 191.2-27.6 37.8-69.399 69.1-125.3 93.8-25.7 11.3-36.8 41.7-24.8 67.101l36 76c11.6 24.399 40.3 35.1 65.1 24.399 66.2-28.6 122.101-64.8 167.7-108.8 55.601-53.7 93.7-114.3 114.3-181.9 20.601-67.6 30.9-159.8 30.9-276.8v-239c0-27.599-22.401-50-50-50zM106.036 913.497c65.4-28.5 121-64.699 166.9-108.6 56.1-53.7 94.4-114.1 115-181.2 20.6-67.1 30.899-159.6 30.899-277.5v-239c0-27.6-22.399-50-50-50h-304c-27.6 0-50 22.4-50 50v304c0 27.601 22.4 50 50 50h145.5c-1.9 79.601-20.4 143.3-55.4 191.2-27.6 37.8-69.4 69.1-125.3 93.8-25.7 11.3-36.8 41.7-24.8 67.101l35.9 75.8c11.601 24.399 40.501 35.2 65.301 24.399z"></path>
-                    </svg>
-                  </div>
-                </div>
-              </SwiperSlide>
-              <SwiperSlide>
-                <div className="p-4  w-full item">
-                  <div className="h-full bg-gray-800 p-8 rounded">
-                    <h1 className="text-3xl font-medium title-font text-[#AECBFA] mb-12 text-center">
-                      What Our Clients Say About Us
-                    </h1>
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="currentColor"
-                      className="block w-5 h-5 text-gray-400 mb-4"
-                      viewBox="0 0 975.036 975.036"
-                    >
-                      <path d="M925.036 57.197h-304c-27.6 0-50 22.4-50 50v304c0 27.601 22.4 50 50 50h145.5c-1.9 79.601-20.4 143.3-55.4 191.2-27.6 37.8-69.399 69.1-125.3 93.8-25.7 11.3-36.8 41.7-24.8 67.101l36 76c11.6 24.399 40.3 35.1 65.1 24.399 66.2-28.6 122.101-64.8 167.7-108.8 55.601-53.7 93.7-114.3 114.3-181.9 20.601-67.6 30.9-159.8 30.9-276.8v-239c0-27.599-22.401-50-50-50zM106.036 913.497c65.4-28.5 121-64.699 166.9-108.6 56.1-53.7 94.4-114.1 115-181.2 20.6-67.1 30.899-159.6 30.899-277.5v-239c0-27.6-22.399-50-50-50h-304c-27.6 0-50 22.4-50 50v304c0 27.601 22.4 50 50 50h145.5c-1.9 79.601-20.4 143.3-55.4 191.2-27.6 37.8-69.4 69.1-125.3 93.8-25.7 11.3-36.8 41.7-24.8 67.101l35.9 75.8c11.601 24.399 40.501 35.2 65.301 24.399z"></path>
-                    </svg>
-                    <p className="leading-relaxed mb-6">
-                      Synth chartreuse iPhone lomo cray raw denim brunch
-                      everyday carry neutra before they sold out fixie 90's
-                      microdosing. Tacos pinterest fanny pack venmo, post-ironic
-                      heirloom try-hard pabst authentic iceland.
-                    </p>
-                    <a className="items-center">
-                      <img
-                        alt="testimonial"
-                        src="https://dummyimage.com/106x106"
-                        className="w-12 h-12 rounded-full flex-shrink-0 object-cover object-center items-center mx-28"
-                      />
-                      <span className="flex-grow flex flex-col text-center ">
-                        <span className="title-font font-medium text-gray-900">
-                          Holden Caulfield
-                        </span>
-                        <span className="text-gray-500 text-sm">
-                          UI DEVELOPER
-                        </span>
-                      </span>
-                    </a>
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="currentColor"
-                      className="block w-5 h-5 text-gray-400 mb-4 ml-[90%]"
-                      viewBox="0 0 975.036 975.036"
-                    >
-                      <path d="M925.036 57.197h-304c-27.6 0-50 22.4-50 50v304c0 27.601 22.4 50 50 50h145.5c-1.9 79.601-20.4 143.3-55.4 191.2-27.6 37.8-69.399 69.1-125.3 93.8-25.7 11.3-36.8 41.7-24.8 67.101l36 76c11.6 24.399 40.3 35.1 65.1 24.399 66.2-28.6 122.101-64.8 167.7-108.8 55.601-53.7 93.7-114.3 114.3-181.9 20.601-67.6 30.9-159.8 30.9-276.8v-239c0-27.599-22.401-50-50-50zM106.036 913.497c65.4-28.5 121-64.699 166.9-108.6 56.1-53.7 94.4-114.1 115-181.2 20.6-67.1 30.899-159.6 30.899-277.5v-239c0-27.6-22.399-50-50-50h-304c-27.6 0-50 22.4-50 50v304c0 27.601 22.4 50 50 50h145.5c-1.9 79.601-20.4 143.3-55.4 191.2-27.6 37.8-69.4 69.1-125.3 93.8-25.7 11.3-36.8 41.7-24.8 67.101l35.9 75.8c11.601 24.399 40.501 35.2 65.301 24.399z"></path>
-                    </svg>
-                  </div>
-                </div>
-              </SwiperSlide>
-              <SwiperSlide>
-                <div className="p-4  w-full item">
-                  <div className="h-full bg-gray-800 p-8 rounded">
-                    <h1 className="text-3xl font-medium title-font text-[#AECBFA] mb-12 text-center">
-                      What Our Clients Say About Us
-                    </h1>
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="currentColor"
-                      className="block w-5 h-5 text-gray-400 mb-4"
-                      viewBox="0 0 975.036 975.036"
-                    >
-                      <path d="M925.036 57.197h-304c-27.6 0-50 22.4-50 50v304c0 27.601 22.4 50 50 50h145.5c-1.9 79.601-20.4 143.3-55.4 191.2-27.6 37.8-69.399 69.1-125.3 93.8-25.7 11.3-36.8 41.7-24.8 67.101l36 76c11.6 24.399 40.3 35.1 65.1 24.399 66.2-28.6 122.101-64.8 167.7-108.8 55.601-53.7 93.7-114.3 114.3-181.9 20.601-67.6 30.9-159.8 30.9-276.8v-239c0-27.599-22.401-50-50-50zM106.036 913.497c65.4-28.5 121-64.699 166.9-108.6 56.1-53.7 94.4-114.1 115-181.2 20.6-67.1 30.899-159.6 30.899-277.5v-239c0-27.6-22.399-50-50-50h-304c-27.6 0-50 22.4-50 50v304c0 27.601 22.4 50 50 50h145.5c-1.9 79.601-20.4 143.3-55.4 191.2-27.6 37.8-69.4 69.1-125.3 93.8-25.7 11.3-36.8 41.7-24.8 67.101l35.9 75.8c11.601 24.399 40.501 35.2 65.301 24.399z"></path>
-                    </svg>
-                    <p className="leading-relaxed mb-6">
-                      Synth chartreuse iPhone lomo cray raw denim brunch
-                      everyday carry neutra before they sold out fixie 90's
-                      microdosing. Tacos pinterest fanny pack venmo, post-ironic
-                      heirloom try-hard pabst authentic iceland.
-                    </p>
-                    <a className="items-center">
-                      <img
-                        alt="testimonial"
-                        src="https://dummyimage.com/106x106"
-                        className="w-12 h-12 rounded-full flex-shrink-0 object-cover object-center items-center mx-28"
-                      />
-                      <span className="flex-grow flex flex-col text-center ">
-                        <span className="title-font font-medium text-gray-900">
-                          Holden Caulfield
-                        </span>
-                        <span className="text-gray-500 text-sm">
-                          UI DEVELOPER
-                        </span>
-                      </span>
-                    </a>
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="currentColor"
-                      className="block w-5 h-5 text-gray-400 mb-4 ml-[90%]"
-                      viewBox="0 0 975.036 975.036"
-                    >
-                      <path d="M925.036 57.197h-304c-27.6 0-50 22.4-50 50v304c0 27.601 22.4 50 50 50h145.5c-1.9 79.601-20.4 143.3-55.4 191.2-27.6 37.8-69.399 69.1-125.3 93.8-25.7 11.3-36.8 41.7-24.8 67.101l36 76c11.6 24.399 40.3 35.1 65.1 24.399 66.2-28.6 122.101-64.8 167.7-108.8 55.601-53.7 93.7-114.3 114.3-181.9 20.601-67.6 30.9-159.8 30.9-276.8v-239c0-27.599-22.401-50-50-50zM106.036 913.497c65.4-28.5 121-64.699 166.9-108.6 56.1-53.7 94.4-114.1 115-181.2 20.6-67.1 30.899-159.6 30.899-277.5v-239c0-27.6-22.399-50-50-50h-304c-27.6 0-50 22.4-50 50v304c0 27.601 22.4 50 50 50h145.5c-1.9 79.601-20.4 143.3-55.4 191.2-27.6 37.8-69.4 69.1-125.3 93.8-25.7 11.3-36.8 41.7-24.8 67.101l35.9 75.8c11.601 24.399 40.501 35.2 65.301 24.399z"></path>
-                    </svg>
+                    </div>
                   </div>
                 </div>
               </SwiperSlide>
@@ -376,28 +332,28 @@ const LandingPage = () => {
           </div>
         </div>
       </section>
-      <section className="text-gray-600 body-font">
+      <section className="text-white body-font">
         <div className="container px-5 py-24  mx-auto">
           <div className="flex flex-col text-center w-full mb-20 ">
             <h1 className="sm:text-3xl text-2xl font-medium title-font text-[#AECBFA]">
               Our Services
             </h1>
             <div className="sm:text-3xl text-2xl font-medium title-font text-gray-900 ">
-              <img
-                alt="services"
-                src={asterick}
-                className="w-96 h-full rounded-full flex-shrink-0 object-cover object-center items-center mx-[43%]"
-              />
+            <img
+  alt="services"
+  src={asterick}
+  className="w-94 sm:w-80 md:w-96 h-auto  object-cover object-center mx-[43%]"
+/>
             </div>
           </div>
           <div className="flex flex-wrap -m-4 ">
             <div className="p-4 md:w-1/3 ">
-              <div className="flex  bg-indigo-500 rounded-lg h-full p-8 flex-col">
+              <div className="flex  bg-[#2A2354] rounded-lg h-full p-8 flex-col">
                 <div className="flex items-center mb-3">
                   <div className="w-8 h-8 mr-3 inline-flex items-center justify-center rounded-full  text-white flex-shrink-0">
                     <svg
-                      width="16"
-                      height="17"
+                      width="96"
+                      height="96"
                       viewBox="0 0 16 17"
                       fill="none"
                       xmlns="http://www.w3.org/2000/svg"
@@ -452,9 +408,6 @@ const LandingPage = () => {
                       />
                     </svg>
                   </div>
-                  {/* <h2 className="text-gray-900 text-lg title-font font-medium">
-                    Shooting Stars
-                  </h2> */}
                 </div>
                 <div className="flex-grow">
                   <p className="leading-relaxed text-base">
@@ -462,14 +415,11 @@ const LandingPage = () => {
                     Officer on board to ensure compliance with GDPR and other
                     relevant regulations.
                   </p>
-                  <a className="mt-3 text-indigo-500 inline-flex items-center">
+                  <a className="mt-3 text-white border rounded-xl w-40 h-10 inline-flex  items-center">
                     Read More
                     <svg
                       fill="none"
                       stroke="currentColor"
-                      // stroke-linecap="round"
-                      // stroke-linejoin="round"
-                      // stroke-width="2"
                       className="w-4 h-4 ml-2"
                       viewBox="0 0 24 24"
                     >
@@ -480,12 +430,12 @@ const LandingPage = () => {
               </div>
             </div>
             <div className="p-4 md:w-1/3">
-              <div className="flex rounded-lg h-full bg-indigo-500 p-8 flex-col">
+              <div className="flex rounded-lg h-full bg-[#2A2354] p-8 flex-col">
                 <div className="flex items-center mb-3">
                   <div className="w-8 h-8 mr-3 inline-flex items-center justify-center rounded-full  text-white flex-shrink-0">
                     <svg
-                      width="16"
-                      height="16"
+                      width="96"
+                      height="96"
                       viewBox="0 0 16 16"
                       fill="none"
                       xmlns="http://www.w3.org/2000/svg"
@@ -516,9 +466,6 @@ const LandingPage = () => {
                       />
                     </svg>
                   </div>
-                  {/* <h2 className="text-gray-900 text-lg title-font font-medium">
-                    The Catalyzer
-                  </h2> */}
                 </div>
                 <div className="flex-grow">
                   <p className="leading-relaxed text-base">
@@ -526,14 +473,11 @@ const LandingPage = () => {
                     identify vulnerabilities and gaps in your data protection
                     practices.
                   </p>
-                  <a className="mt-3 text-indigo-500 inline-flex items-center">
+                  <a className="mt-3 text-white border rounded-xl inline-flex items-center">
                     Read More
                     <svg
                       fill="none"
                       stroke="currentColor"
-                      // stroke-linecap="round"
-                      // stroke-linejoin="round"
-                      // stroke-width="2"
                       className="w-4 h-4 ml-2"
                       viewBox="0 0 24 24"
                     >
@@ -544,12 +488,12 @@ const LandingPage = () => {
               </div>
             </div>
             <div className="p-4 md:w-1/3 ">
-              <div className="flex rounded-lg h-full bg-indigo-500 p-8 flex-col">
+              <div className="flex rounded-lg h-full bg-[#2A2354] p-8 flex-col">
                 <div className="flex items-center mb-3">
                   <div className="w-8 h-8 mr-3 inline-flex items-center justify-center rounded-full  text-white flex-shrink-0">
                     <svg
-                      width="16"
-                      height="17"
+                      width="96"
+                      height="96"
                       viewBox="0 0 16 17"
                       fill="none"
                       xmlns="http://www.w3.org/2000/svg"
@@ -572,23 +516,17 @@ const LandingPage = () => {
                       />
                     </svg>
                   </div>
-                  {/* <h2 className="text-gray-900 text-lg title-font font-medium">
-                    Neptune
-                  </h2> */}
                 </div>
                 <div className="flex-grow">
                   <p className="leading-relaxed text-base">
                     Compliance Training: We provide tailored training programs
                     to educate your employees on data privacy best practices.
                   </p>
-                  <a className="mt-3 text-indigo-500 inline-flex items-center">
+                  <a className="mt-3 text-white border rounded-xl inline-flex items-center">
                     Read More
                     <svg
                       fill="none"
                       stroke="currentColor"
-                      // stroke-linecap="round"
-                      // stroke-linejoin="round"
-                      // stroke-width="2"
                       className="w-4 h-4 ml-2"
                       viewBox="0 0 24 24"
                     >
@@ -603,29 +541,29 @@ const LandingPage = () => {
       </section>
       <div className="container mx-auto pt-16">
         <h1 className="text-[#AECBFA]">Our Partners</h1>
-        <div className="xl:py-16 lg:py-16 md:py-16 sm:py-16 px-15 flex flex-wrap items-center justify-center">
-          <div className="w-6/12 xl:w-1/3 lg:w-1/3 md:w-1/3 flex justify-center xl:pb-10 pb-16 items-center">
+        <div className="xl:py-16 lg:py-16 md:py-16 sm:py-16 px-15 flex flex-wrap items-center justify-center gap-6">
+          <div className="w-60 flex justify-center xl:pb-10 pb-16 items-center bg-[#1C2441]">
             <img
               tabIndex="0"
-              className="focus:outline-none w-auto h-24"
+              className="focus:outline-none w-auto h-24 mt-20"
               src={image1}
               alt="Paymi"
               role="img"
             />
           </div>
-          <div className="w-6/12 xl:w-1/3 lg:w-1/3 md:w-1/3 flex justify-center xl:pb-10 pb-16 pt-4 items-center">
+          <div className="w-60 flex justify-center xl:pb-10 pb-16 items-center bg-[#1C2441]">
             <img
               tabIndex="0"
-              className="focus:outline-none w-auto h-24"
+              className="focus:outline-none w-auto h-24  mt-20"
               src={image2}
               alt="Fairsure"
               role="img"
             />
           </div>
-          <div className="w-6/12 xl:w-1/3 lg:w-1/3 md:w-1/3 flex justify-center xl:pb-10 pb-16 items-center">
+          <div className="w-60 flex justify-center xl:pb-10 pb-16 items-center bg-[#1C2441]">
             <img
               tabIndex="0"
-              className="focus:outline-none w-auto h-24"
+              className="focus:outline-none w-auto h-24  mt-20"
               src={image3}
               alt="Freewave"
               role="img"

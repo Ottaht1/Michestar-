@@ -40,7 +40,7 @@ export default function Navbar() {
               </div>
               <div className="flex flex-1 items-center justify-center sm:justify-between">
                 <div className="flex flex-shrink-0 items-center">
-                  <img className="h-11 w-auto" src={ILogo} alt="Your Company" />
+                  <img className="h-20 w-full" src={ILogo} alt="Your Company" />
                 </div>
                 <div className="hidden sm:ml-6 sm:block">
                   <div className="flex space-x-4">
