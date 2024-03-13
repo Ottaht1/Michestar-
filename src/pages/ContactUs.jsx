@@ -8,31 +8,40 @@ const ContactUsPage = () => {
       <Navbar />
 
       <div className="flex mt-20 gap-6 items-center justify-center">
-  <div className="flex bg-[#30395F] rounded-lg p-4 flex-col w-60 h-[10rem] ">
-    <div className="items-center mb-3">
-      <h2 className="text-gray-900 text-lg title-font font-medium">Location</h2>
-    </div>
-    <div className="flex-grow">
-      <p className="leading-relaxed text-base">suite 39, <br/> 3rd floor, Mangal Plaza, <br/> Area 11, Garki, Abuja.</p>
-    </div>
-  </div>
-  <div className="flex flex-col bg-indigo-500 rounded-lg p-4 flex-colw-60 h-[10rem] ">
-    <div className="items-center mb-3">
-      <h2 className="text-gray-900 text-lg title-font font-medium">Email Us</h2>
-    </div>
-    <div className="">
-      <p className="leading-relaxed text-base">info@michestar.ng</p>
-    </div>
-  </div>
-  <div className="flex bg-indigo-500 rounded-lg p-4 flex-col w-60 h-[10rem]">
-    <div className="items-center mb-3">
-      <h2 className="text-gray-900 text-lg title-font font-medium">Customer Support</h2>
-    </div>
-    <div className="flex-grow">
-      <p className="leading-relaxed text-base">08163260399 08033445507</p>
-    </div>
-  </div>
-</div>
+        <div className="flex bg-[#30395F] rounded-lg p-4 flex-col w-60 h-[10rem] ">
+          <div className="items-center mb-3">
+            <h2 className="text-gray-900 text-lg title-font font-medium">
+              Location
+            </h2>
+          </div>
+          <div className="flex-grow">
+            <p className="leading-relaxed text-base">
+              suite 39, <br /> 3rd floor, Mangal Plaza, <br /> Area 11, Garki,
+              Abuja.
+            </p>
+          </div>
+        </div>
+        <div className="flex flex-col bg-indigo-500 rounded-lg p-4 flex-colw-60 h-[10rem] ">
+          <div className="items-center mb-3">
+            <h2 className="text-gray-900 text-lg title-font font-medium">
+              Email Us
+            </h2>
+          </div>
+          <div className="">
+            <p className="leading-relaxed text-base">info@michestar.ng</p>
+          </div>
+        </div>
+        <div className="flex bg-indigo-500 rounded-lg p-4 flex-col w-60 h-[10rem]">
+          <div className="items-center mb-3">
+            <h2 className="text-gray-900 text-lg title-font font-medium">
+              Customer Support
+            </h2>
+          </div>
+          <div className="flex-grow">
+            <p className="leading-relaxed text-base">08163260399 08033445507</p>
+          </div>
+        </div>
+      </div>
 
       <div className="container my-24 mx-auto md:px-6">
         <section className="mb-32">

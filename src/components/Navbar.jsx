@@ -5,14 +5,13 @@ import { ILogo } from "../utils/icons.utils";
 import { NavLink, Link, useLocation } from "react-router-dom";
 import config from "../utils/config";
 
-
 const { routes } = config;
 
 const navigation = [
   { name: "Home", href: routes.home },
   { name: "About Us", href: routes.about },
   { name: "Services", href: routes.services },
-  {name: "Contact Us", href: routes.contact},
+  { name: "Contact Us", href: routes.contact },
 ];
 
 function classNames(...classes) {
@@ -59,14 +58,6 @@ export default function Navbar() {
                     ))}
                   </div>
                 </div>
-                {/* <div className="flex h-11">
-                  <button
-                    type="button"
-                    className="bg-[#FFA500]  text-white text-base hover:border-[#83979F] border-2 px-5 rounded-full"
-                  >
-                    Contact Us
-                  </button>
-                </div> */}
               </div>
             </div>
           </div>

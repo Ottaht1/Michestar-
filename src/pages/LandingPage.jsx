@@ -339,11 +339,11 @@ const LandingPage = () => {
               Our Services
             </h1>
             <div className="sm:text-3xl text-2xl font-medium title-font text-gray-900 ">
-            <img
-  alt="services"
-  src={asterick}
-  className="w-94 sm:w-80 md:w-96 h-auto  object-cover object-center mx-[43%]"
-/>
+              <img
+                alt="services"
+                src={asterick}
+                className="w-94 sm:w-80 md:w-96 h-auto  object-cover object-center mx-[43%]"
+              />
             </div>
           </div>
           <div className="flex flex-wrap -m-4 ">

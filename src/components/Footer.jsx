@@ -12,7 +12,10 @@ const navigation = {
 export default function Footer() {
   return (
     <>
-      <footer className="bg-[#4285F4] pb-6 mt-10" aria-labelledby="footer-heading">
+      <footer
+        className="bg-[#4285F4] pb-6 mt-10"
+        aria-labelledby="footer-heading"
+      >
         <h2 id="footer-heading" className="sr-only">
           Footer
         </h2>
@@ -69,7 +72,8 @@ export default function Footer() {
                       </defs>
                     </svg>
                     <span className="ml-2 sm:ml-4">
-                      Suite 39, Third Floor, Mangal Plaza, <br className="hidden sm:block" />
+                      Suite 39, Third Floor, Mangal Plaza,{" "}
+                      <br className="hidden sm:block" />
                       Area 11, Garki, Abuja.
                     </span>
                   </span>
@@ -113,7 +117,9 @@ export default function Footer() {
                         fill="#E8EAF2"
                       />
                     </svg>
-                    <span className="ml-2 sm:ml-4">08163260399, 08033445507</span>
+                    <span className="ml-2 sm:ml-4">
+                      08163260399, 08033445507
+                    </span>
                   </p>
                 </div>
               </div>

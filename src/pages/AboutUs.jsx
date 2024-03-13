@@ -7,15 +7,27 @@ import image3 from "../assets/Paymi.svg";
 import image4 from "../assets/fairsure.svg";
 import image5 from "../assets/freewave.svg";
 import Aboutsvg from "../assets/about.svg";
+import image from "../assets/background.svg";
+import rectangle1 from "../assets/rectangle1.svg";
+import rectangle2 from "../assets/rectangle2.svg";
+import rectangle4 from "../assets/rectangle4.svg";
+import rectangle5 from "../assets/rectangle5.svg";
 
 const AboutPage = () => {
   return (
     <>
       <Navbar />
 
-      <div className="mt-20">
+      <div>
         <h1>About Us</h1>
-        <section className="text-gray-600 body-font">
+        <section
+          className="text-gray-600 body-font"
+          style={{
+            backgroundImage: `url(${image})`,
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+          }}
+        >
           <div className="container mx-auto flex px-5 py-24 md:flex-row flex-col items-center">
             <div className="lg:max-w-2xl lg:w-full md:w-3/4 w-full mb-10 md:mb-0">
               <img
@@ -26,7 +38,7 @@ const AboutPage = () => {
               <img
                 src={image2}
                 alt="A descriptive alternative text"
-                className="w-full h-auto mt-6"
+                className="w-96 h-auto mt-6"
               />
             </div>
 
@@ -231,75 +243,183 @@ const AboutPage = () => {
             </div>
           </div>
         </section>
-        <section className="text-gray-600 body-font">
-        <div className="container px-5 py-24  mx-auto">
-          <div className="flex flex-col text-center w-full mb-20 ">
-            <h1 className="sm:text-3xl text-4xl font-medium title-font text-[#AECBFA]">
-              What We Offer
-            </h1>
+        <section className="text-gray-600 body-font mb-10">
+          <div className="container px-5 py-24 mx-auto">
+            <div className="flex flex-col text-center w-full mb-20">
+              <h1 className="sm:text-3xl text-4xl font-medium title-font text-[#AECBFA]">
+                What We Offer
+              </h1>
+            </div>
+            <div className="flex flex-wrap -m-4 font-semibold text">
+              <div className="p-4 md:w-1/2 lg:w-1/3">
+                <div
+                  className="flex  rounded-lg h-full p-8 flex-col text-white brightness-50 "
+                  style={{
+                    backgroundImage: `url(${rectangle1})`,
+                    backgroundSize: "cover",
+                    backgroundPosition: "center",
+                  }}
+                >
+                  <h6 className="text-xl">Data Mapping and inventory</h6>
+                  <ul className="list-none mt-4">
+                    <li>
+                      <span className="text-white mr-2">•</span>We work closely
+                      with your personnel to map the flow of personal data
+                      throughout your organization, identifying data sources,
+                      storage locations and processing activities.
+                    </li>
+                    <li>
+                      <span className="text-white mr-2">•</span>We utilize
+                      specialized data mapping tools to create a comprehensive
+                      data inventory, providing clarity and transparency into
+                      your data ecosystem.
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              <div className="p-4 md:w-1/2 lg:w-1/3">
+                <div
+                  className="flex  rounded-lg h-full p-8 flex-col text-white brightness-50"
+                  style={{
+                    backgroundImage: `url(${rectangle2})`,
+                    backgroundSize: "cover",
+                    backgroundPosition: "center",
+                  }}
+                >
+                  <h6 className="text-xl">Gap Analysis and Risk Assessment</h6>
+                  <ul className="list-none mt-4">
+                    <li>
+                      <span className="text-white mr-2">•</span>We evaluate your
+                      existing data protection practices against the strict
+                      requirements of the NDPR, employing robust gap analysis
+                      methodologies.
+                    </li>
+                    <li>
+                      <span className="text-white mr-2">•</span>We idetify
+                      vulnerabilities and potential non-compliance issues,
+                      assessing the associated risks and potential impact on
+                      your organization.
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div className="p-4 md:w-1/2 lg:w-1/3">
+                <div
+                  className="flex  rounded-lg h-full p-8 flex-col text-white brightness-50"
+                  style={{
+                    backgroundImage: `url(${rectangle1})`,
+                    backgroundSize: "cover",
+                    backgroundPosition: "center",
+                  }}
+                >
+                  <h6 className="text-xl">
+                    In-Depth Technical and Procedural Review
+                  </h6>
+                  <ul className="list-none mt-4">
+                    <li>
+                      <span className="text-white mr-2">•</span>Our experienced
+                      data protection specialists delve deeper into your
+                      technical infrastructure and security controls,
+                      scrutinizing their effectiveness in protecting personal
+                      data.
+                    </li>
+                    <li>
+                      <span className="text-white mr-2">•</span>We review your
+                      data protection policies, procedures and documentation,
+                      ensuring alignment with NDPR best practices and addressing
+                      any inconsistencies.
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div className="p-4 md:w-1/2 lg:w-1/3">
+                <div
+                  className="flex  rounded-lg h-full p-8 flex-col text-white brightness-50"
+                  style={{
+                    backgroundImage: `url(${rectangle4})`,
+                    backgroundSize: "cover",
+                    backgroundPosition: "center",
+                  }}
+                >
+                  <h6 className="text-xl">
+                    Comprehensive Reporting and Recommendations
+                  </h6>
+                  <ul className="list-none mt-4">
+                    <li>
+                      <span className="text-white mr-2">•</span>We provide a
+                      detailed audit report highlighting all findings, identify
+                      gaps and potential risks.
+                    </li>
+                    <li>
+                      <span className="text-white mr-2">•</span>We craft a set
+                      of actionable recommendations, prioritizing crucial
+                      actions to effectively address non- compliance issues and
+                      bolster your data protection posture.
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div className="p-4 md:w-1/2 lg:w-1/3">
+                <div
+                  className="flex  rounded-lg h-full p-8 flex-col text-white brightness-50 "
+                  style={{
+                    backgroundImage: `url(${rectangle5})`,
+                    backgroundSize: "cover",
+                    backgroundPosition: "center",
+                  }}
+                >
+                  <h6 className="text-xl">
+                    Implementation, Support and Guidance
+                  </h6>
+                  <ul className="list-none mt-4">
+                    <li>
+                      <span className="text-white mr-2">•</span>We go beyond
+                      mere identification of problems. We offer ongoing support
+                      to help to help you implement the recommended solutions,
+                      providing guidance on policy revisions, technology
+                      upgrades and personnel training.
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
           </div>
-          <div className="flex  -m-4 ">
-            <div className="p-4 md:w-1/3 ">
-              <div className="flex bg-indigo-500 rounded-lg h-full p-8 flex-col">
-               
-               
-              </div>
+        </section>
+        <div className="container mx-auto pt-16">
+          <h1 className="sm:text-3xl text-4xl font-medium title-font text-[#AECBFA]">
+            Our Partners
+          </h1>
+          <div className="xl:py-16 lg:py-16 md:py-16 sm:py-16 px-15 flex flex-wrap items-center justify-center gap-6">
+            <div className="w-60 flex justify-center xl:pb-10 pb-16 items-center bg-[#1C2441]">
+              <img
+                tabIndex="0"
+                className="focus:outline-none w-auto h-24 mt-20"
+                src={image3}
+                alt="Paymi"
+                role="img"
+              />
             </div>
-            <div className="p-4 md:w-1/3">
-              <div className="flex rounded-lg h-full bg-indigo-500 p-8 flex-col">
-                
-              </div>
+            <div className="w-60 flex justify-center xl:pb-10 pb-16 items-center bg-[#1C2441]">
+              <img
+                tabIndex="0"
+                className="focus:outline-none w-auto h-24  mt-20"
+                src={image4}
+                alt="Fairsure"
+                role="img"
+              />
             </div>
-            <div className="p-4 md:w-1/3">
-              <div className="flex rounded-lg h-full bg-indigo-500 p-8 flex-col">
-                
-              </div>
-            </div>
-            <div className="p-4 md:w-1/3">
-              <div className="flex rounded-lg h-full bg-indigo-500 p-8 flex-col">
-              
-              </div>
-            </div>
-            <div className="p-4 md:w-1/3 ">
-              <div className="flex rounded-lg h-full bg-indigo-500 p-8 flex-col">
-               
-              </div>
+            <div className="w-60 flex justify-center xl:pb-10 pb-16 items-center bg-[#1C2441]">
+              <img
+                tabIndex="0"
+                className="focus:outline-none w-auto h-24  mt-20"
+                src={image5}
+                alt="Freewave"
+                role="img"
+              />
             </div>
           </div>
         </div>
-      </section>
-      <div className="container mx-auto pt-16">
-        <h1 className="text-[#AECBFA]">Our Partners</h1>
-        <div className="xl:py-16 lg:py-16 md:py-16 sm:py-16 px-15 flex flex-wrap items-center justify-center gap-6">
-          <div className="w-60 flex justify-center xl:pb-10 pb-16 items-center bg-[#1C2441]">
-            <img
-              tabIndex="0"
-              className="focus:outline-none w-auto h-24 mt-20"
-              src={image3}
-              alt="Paymi"
-              role="img"
-            />
-          </div>
-          <div className="w-60 flex justify-center xl:pb-10 pb-16 items-center bg-[#1C2441]">
-            <img
-              tabIndex="0"
-              className="focus:outline-none w-auto h-24  mt-20"
-              src={image4}
-              alt="Fairsure"
-              role="img"
-            />
-          </div>
-          <div className="w-60 flex justify-center xl:pb-10 pb-16 items-center bg-[#1C2441]">
-            <img
-              tabIndex="0"
-              className="focus:outline-none w-auto h-24  mt-20"
-              src={image5}
-              alt="Freewave"
-              role="img"
-            />
-          </div>
-        </div>
-      </div>
       </div>
       <Footer />
     </>
