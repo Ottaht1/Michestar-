@@ -210,15 +210,15 @@ const AboutPage = () => {
           </div>
         </section>
 
-        <section className="text-gray-600 body-font">
+        <section className="text-gray-600 body-font relative w-full h-full">
           <div className="container mx-auto flex px-5 py-24 md:flex-row flex-col items-center">
             <div
               className="lg:max-w-2xl lg:w-full md:w-3/4 w-full mb-10 md:mb-0"
-              style={{
-                backgroundImage: `url(${Eclipse})`,
-                backgroundSize: "200rem",
-                backgroundPosition: "left",
-              }}
+              // style={{
+              //   backgroundImage: `url(${Eclipse})`,
+              //   backgroundSize: "200rem",
+              //   backgroundPosition: "left",
+              // }}
             >
               <img
                 src={Aboutsvg}
@@ -244,6 +244,14 @@ const AboutPage = () => {
                 To be the industry leader in providing integrated business
                 solutions and services.
               </p>
+            </div>
+            <div className="absolute w-full ">
+              <img
+                className="w-full h-full"
+                src={Eclipse}
+                alt="Eclipse"
+                role="img"
+              />
             </div>
           </div>
         </section>
