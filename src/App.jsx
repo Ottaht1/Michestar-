@@ -1,15 +1,18 @@
-import { useState } from 'react'
-import './App.css'
-import LandingPage from './pages/LandingPage'
+import { Outlet } from 'react-router-dom';
+import './App.css';
+import Navbar from './components/Navbar';
+import Footer from './components/Footer';
 
-function App() {
-  const [count, setCount] = useState(0)
+function Layout() {
+
 
   return (
     <>
-     <LandingPage />
+    <Navbar/>
+    <Outlet/>
+    <Footer/>
     </>
   )
 }
 
-export default App
+export default Layout

@@ -1,9 +1,15 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import { Disclosure, Menu, Transition } from "@headlessui/react";
-import { Bars3Icon, BellIcon, XMarkIcon, ChevronDownIcon } from "@heroicons/react/24/outline";
+import {
+  Bars3Icon,
+  XMarkIcon,
+  ChevronDownIcon,
+} from "@heroicons/react/24/outline";
 import { ILogo } from "../utils/icons.utils";
 import { NavLink, Link, useLocation } from "react-router-dom";
 import config from "../utils/config";
+// import SBG1 from "../assets/services.png";
+// import SBG2 from "../assets/services.png";
 
 const { routes } = config;
 
@@ -14,8 +20,29 @@ const navigation = [
     name: "Services",
     href: routes.services,
     children: [
-      { name: "Service 1", href: routes.service1 },
-      { name: "Service 2", href: routes.service2 },
+      { name: "Audit and Compliance", href: `${routes.services}/services1` },
+      {
+        name: "Data Protection Training",
+        href: `${routes.services}/services1#data-protection`,
+      },
+      {
+        name: "Enrollment as a Service",
+        href: `${routes.services}/services2`,
+      },
+      {
+        name: "Value-Added Services",
+        href: `${routes.services}/services2`,
+        children: [
+          {
+            name: "Data Security",
+            href: `${routes.services}/services2#data-security`,
+          },
+          {
+            name: "Data Analysis",
+            href: `${routes.services}/services2#data-analysis`,
+          },
+        ],
+      },
     ],
   },
 ];
@@ -26,6 +53,22 @@ function classNames(...classes) {
 
 export default function Navbar() {
   const location = useLocation();
+  const lastHash = useRef();
+  console.log(location.hash);
+  useEffect(() => {
+    if (location.hash) {
+      lastHash.current = location.hash.slice(1); // safe hash for further use after navigation
+    }
+
+    if (lastHash.current && document.getElementById(lastHash.current)) {
+      setTimeout(() => {
+        document
+          .getElementById(lastHash.current)
+          ?.scrollIntoView({ behavior: "smooth", block: "start" });
+        lastHash.current = "";
+      }, 100);
+    }
+  }, [location]);
 
   return (
     <Disclosure as="nav" className=" w-11/12 m-auto my-6 rounded-full">
@@ -55,7 +98,10 @@ export default function Navbar() {
                       <Menu as="div" key={item.name} className="relative">
                         <Menu.Button className="inline-flex items-center text-white hover:text-[#FFA500] px-8 py-3 text-base font-medium">
                           {item.name}
-                          <ChevronDownIcon className="ml-2 h-5 w-5" aria-hidden="true" />
+                          <ChevronDownIcon
+                            className="ml-2 h-5 w-5"
+                            aria-hidden="true"
+                          />
                         </Menu.Button>
                         <Transition
                           as={React.Fragment}
@@ -66,22 +112,78 @@ export default function Navbar() {
                           leaveFrom="transform opacity-100 scale-100"
                           leaveTo="transform opacity-0 scale-95"
                         >
-                          <Menu.Items className="absolute z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
-                            {item.children.map((child) => (
-                              <Menu.Item key={child.name}>
-                                {({ active }) => (
-                                  <NavLink
-                                    to={child.href}
-                                    className={classNames(
-                                      active ? "bg-gray-100" : "",
-                                      "block px-4 py-2 text-sm text-gray-700"
-                                    )}
+                          <Menu.Items className="absolute z-10 mt-2 w-96 origin-top-right rounded-md bg-[#171D35] py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
+                            {/* Added heading and subheading for "Services" dropdown */}
+                            {item.name === "Services" && (
+                              <div className="px-4 py-2">
+                                <h3 className="text-[#AECBFA] font-bold text-3xl">
+                                  Our Services
+                                </h3>
+                                <h6 className="text-white mt-2">What We Do</h6>
+                              </div>
+                            )}
+                            <div>
+                              {item.children.map((child) =>
+                                child.children ? (
+                                  <Menu
+                                    as="div"
+                                    key={child.name}
+                                    className="relative"
                                   >
-                                    {child.name}
-                                  </NavLink>
-                                )}
-                              </Menu.Item>
-                            ))}
+                                    <Menu.Button className="inline-flex items-center text-white hover:text-[#FFA500] px-8 py-3 text-base font-medium">
+                                      {child.name}
+                                      <ChevronDownIcon
+                                        className="ml-2 h-5 w-5"
+                                        aria-hidden="true"
+                                      />
+                                    </Menu.Button>
+                                    <Transition
+                                      as={React.Fragment}
+                                      enter="transition ease-out duration-100"
+                                      enterFrom="transform opacity-0 scale-95"
+                                      enterTo="transform opacity-100 scale-100"
+                                      leave="transition ease-in duration-75"
+                                      leaveFrom="transform opacity-100 scale-100"
+                                      leaveTo="transform opacity-0 scale-95"
+                                    >
+                                      <Menu.Items className="absolute z-10 mt-2 w-48 origin-top-right rounded-md bg-[#171D35] py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
+                                        {child.children.map((subChild) => (
+                                          <div key={subChild.name}>
+                                            <Menu.Item>
+                                              {({ active }) => (
+                                                <NavLink
+                                                  to={subChild.href}
+                                                  className={classNames(
+                                                    active ? "bg-gray-100" : "",
+                                                    "block px-4 py-2 text-sm text-white"
+                                                  )}
+                                                >
+                                                  {subChild.name}
+                                                </NavLink>
+                                              )}
+                                            </Menu.Item>
+                                          </div>
+                                        ))}
+                                      </Menu.Items>
+                                    </Transition>
+                                  </Menu>
+                                ) : (
+                                  <Menu.Item key={child.name}>
+                                    {({ active }) => (
+                                      <NavLink
+                                        to={child.href}
+                                        className={classNames(
+                                          active ? "bg-gray-100" : "",
+                                          "block px-4 py-2 text-sm text-white"
+                                        )}
+                                      >
+                                        {child.name}
+                                      </NavLink>
+                                    )}
+                                  </Menu.Item>
+                                )
+                              )}
+                            </div>
                           </Menu.Items>
                         </Transition>
                       </Menu>
@@ -90,7 +192,9 @@ export default function Navbar() {
                         key={item.name}
                         to={item.href}
                         className={`text-white hover:text-[#FFA500] px-8 py-3 text-base font-medium ${
-                          location.pathname === item.href ? " text-[#FFA500] " : "text-white"
+                          location.pathname === item.href
+                            ? " text-[#FFA500] "
+                            : "text-white"
                         }`}
                       >
                         {item.name}
@@ -132,7 +236,9 @@ export default function Navbar() {
                               <NavLink
                                 to={child.href}
                                 className={classNames(
-                                  active ? "bg-gray-900 text-white" : "text-white",
+                                  active
+                                    ? "bg-gray-900 text-white"
+                                    : "text-white",
                                   "block px-3 py-2 rounded-md text-base font-medium"
                                 )}
                               >

@@ -1,6 +1,4 @@
 import React from "react";
-import Navbar from "../components/Navbar";
-import Footer from "../components/Footer";
 import image1 from "../assets/image 10.png";
 import image2 from "../assets/image 11.png";
 import image3 from "../assets/Paymi.svg";
@@ -17,8 +15,6 @@ import Eclipse from "../assets/Eclipse.svg";
 const AboutPage = () => {
   return (
     <>
-      <Navbar />
-
       <div>
         <h1>About Us</h1>
         <section
@@ -429,7 +425,6 @@ const AboutPage = () => {
           </div>
         </div>
       </div>
-      <Footer />
     </>
   );
 };

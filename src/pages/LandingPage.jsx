@@ -1,6 +1,4 @@
 import React from "react";
-import Navbar from "../components/Navbar";
-import Footer from "../components/Footer";
 import landingpagewoman from "../assets/landingpagewoman.svg";
 import landingpageman from "../assets/landingpageman.svg";
 import image1 from "../assets/Paymi.svg";
@@ -20,7 +18,6 @@ import persona2 from "../assets/images/femi.svg";
 const LandingPage = () => {
   return (
     <>
-      <Navbar />
       <section
         className="text-gray-600 body-font"
         style={{
@@ -578,8 +575,6 @@ const LandingPage = () => {
           </div>
         </div>
       </div>
-
-      <Footer />
     </>
   );
 };

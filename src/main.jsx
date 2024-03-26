@@ -1,31 +1,44 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import App from "./App.jsx";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import "./index.css";
 import config from "./utils/config.js";
-import ServicesPage from "./pages/Services.jsx";
 import AboutUsPage from "./pages/AboutUs.jsx";
 import ContactUsPage from "./pages/ContactUs.jsx";
+import Layout from "./App.jsx";
+import LandingPage from "./pages/LandingPage.jsx";
+import ServicesOne from "./pages/Services/ServicesOne.jsx";
+import ServicesTwo from "./pages/Services/ServicesTwo.jsx";
 
 const { routes } = config;
 
 const router = createBrowserRouter([
   {
     path: routes.home,
-    element: <App />,
-  },
-  {
-    path: routes.about,
-    element: <AboutUsPage />,
-  },
-  {
-    path: routes.services,
-    element: <ServicesPage />,
-  },
-  {
-    path: routes.contact,
-    element: <ContactUsPage />,
+    element: <Layout />,
+    children: [
+      {
+        index: true,
+        element: <LandingPage />,
+      },
+
+      {
+        path: routes.about,
+        element: <AboutUsPage />,
+      },
+      {
+        path: "services/services1",
+        element: <ServicesOne />,
+      },
+      {
+        path: "services/services2",
+        element: <ServicesTwo />,
+      },
+      {
+        path: routes.contact,
+        element: <ContactUsPage />,
+      },
+    ],
   },
 ]);
 
