@@ -254,10 +254,10 @@ const AboutPage = () => {
                 What We Offer
               </h1>
             </div>
-            <div className="flex flex-wrap -m-4 font-semibold text">
+            <div className="flex flex-wrap -m-4 font-semibold text ">
               <div className="p-4 md:w-1/2 lg:w-1/3">
                 <div
-                  className="flex  rounded-lg h-full p-8 flex-col text-white "
+                  className="flex  rounded-lg h-full p-8 flex-col text-white bg-black opacity-50"
                   style={{
                     backgroundImage: `url(${rectangle1})`,
                     backgroundSize: "cover",
@@ -282,9 +282,9 @@ const AboutPage = () => {
                 </div>
               </div>
 
-              <div className="p-4 md:w-1/2 lg:w-1/3">
+              <div className="p-4 md:w-1/2 lg:w-1/3 ">
                 <div
-                  className="flex  rounded-lg h-full p-8 flex-col text-white"
+                  className="flex  rounded-lg h-full p-8 flex-col text-white bg-black opacity-50"
                   style={{
                     backgroundImage: `url(${rectangle2})`,
                     backgroundSize: "cover",
@@ -310,7 +310,7 @@ const AboutPage = () => {
               </div>
               <div className="p-4 md:w-1/2 lg:w-1/3">
                 <div
-                  className="flex  rounded-lg h-full p-8 flex-col text-white"
+                  className="flex  rounded-lg h-full p-8 flex-col text-white bg-black opacity-50"
                   style={{
                     backgroundImage: `url(${rectangle1})`,
                     backgroundSize: "cover",
@@ -339,7 +339,7 @@ const AboutPage = () => {
               </div>
               <div className="p-4 md:w-1/2 lg:w-1/3">
                 <div
-                  className="flex  rounded-lg h-full p-8 flex-col text-white"
+                  className="flex  rounded-lg h-full p-8 flex-col text-white bg-black opacity-50"
                   style={{
                     backgroundImage: `url(${rectangle4})`,
                     backgroundSize: "cover",
@@ -366,7 +366,7 @@ const AboutPage = () => {
               </div>
               <div className="p-4 md:w-1/2 lg:w-1/3">
                 <div
-                  className="flex  rounded-lg h-full p-8 flex-col text-white"
+                  className="flex  rounded-lg h-full p-8 flex-col text-white bg-black opacity-50"
                   style={{
                     backgroundImage: `url(${rectangle5})`,
                     backgroundSize: "cover",
