@@ -52,15 +52,8 @@ const LandingPage = () => {
         </div>
       </section>
 
-      <section
-        className="text-gray-600 body-font"
-        style={{
-          backgroundImage: `url(${Eclipse})`,
-          backgroundSize: "105rem",
-          backgroundPosition: "right",
-        }}
-      >
-        <div className="container mx-auto flex px-5 py-24 md:flex-row flex-col items-center">
+      <section className="text-gray-600 body-font">
+        <div className="container mx-auto flex px-5 py-24 md:flex-row flex-col items-center relative w-full">
           <div className="lg:max-w-2xl lg:w-full md:w-3/4 w-full mb-10 md:mb-0">
             <img
               src={landingpageman}
@@ -190,6 +183,13 @@ const LandingPage = () => {
                 </div>
               </div>
             </div>
+          </div>
+          <div className="absolute w-full">
+            <img
+              src={Eclipse}
+              alt="Description of the image"
+              className="w-full h-auto"
+            />
           </div>
         </div>
       </section>
