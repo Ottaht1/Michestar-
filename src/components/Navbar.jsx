@@ -8,8 +8,6 @@ import {
 import { ILogo } from "../utils/icons.utils";
 import { NavLink, Link, useLocation } from "react-router-dom";
 import config from "../utils/config";
-// import SBG1 from "../assets/services.png";
-// import SBG2 from "../assets/services.png";
 
 const { routes } = config;
 
@@ -71,28 +69,29 @@ export default function Navbar() {
   }, [location]);
 
   return (
-    <Disclosure as="nav" className=" w-11/12 m-auto my-6 rounded-full">
+    <Disclosure as="nav" className="w-11/12 m-auto my-6 rounded-full">
       {({ open }) => (
         <>
           <div className="mx-auto min-w-7xl px-2 sm:px-6 lg:px-4">
             <div className="relative flex h-16 items-center justify-between">
-              <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
-                {/* Mobile menu button */}
-                <Disclosure.Button className="relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
-                  <span className="absolute -inset-0.5" />
-                  <span className="sr-only">Open main menu</span>
-                  {open ? (
-                    <XMarkIcon className="block h-6 w-6" aria-hidden="true" />
-                  ) : (
-                    <Bars3Icon className="block h-6 w-6" aria-hidden="true" />
-                  )}
-                </Disclosure.Button>
-              </div>
               <div className="flex flex-1 items-center justify-between">
                 <div className="flex flex-shrink-0 items-center">
                   <img className="h-20 w-full" src={ILogo} alt="Your Company" />
                 </div>
+                <div className="sm:hidden">
+                  {/* Mobile menu button moved to the far right */}
+                  <Disclosure.Button className="relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
+                    <span className="absolute -inset-0.5" />
+                    <span className="sr-only">Open main menu</span>
+                    {open ? (
+                      <XMarkIcon className="block h-6 w-6" aria-hidden="true" />
+                    ) : (
+                      <Bars3Icon className="block h-6 w-6" aria-hidden="true" />
+                    )}
+                  </Disclosure.Button>
+                </div>
                 <div className="hidden sm:ml-6 sm:flex sm:space-x-4">
+                  {/* Rest of the navigation items */}
                   {navigation.map((item) =>
                     item.children ? (
                       <Menu as="div" key={item.name} className="relative">
@@ -103,6 +102,7 @@ export default function Navbar() {
                             aria-hidden="true"
                           />
                         </Menu.Button>
+                        {/* Submenu transition */}
                         <Transition
                           as={React.Fragment}
                           enter="transition ease-out duration-100"
@@ -112,6 +112,7 @@ export default function Navbar() {
                           leaveFrom="transform opacity-100 scale-100"
                           leaveTo="transform opacity-0 scale-95"
                         >
+                          {/* Submenu items */}
                           <Menu.Items className="absolute z-10 mt-2 w-96 origin-top-right rounded-md bg-[#171D35] py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
                             {/* Added heading and subheading for "Services" dropdown */}
                             {item.name === "Services" && (
@@ -137,6 +138,7 @@ export default function Navbar() {
                                         aria-hidden="true"
                                       />
                                     </Menu.Button>
+                                    {/* Submenu transition */}
                                     <Transition
                                       as={React.Fragment}
                                       enter="transition ease-out duration-100"
@@ -146,6 +148,7 @@ export default function Navbar() {
                                       leaveFrom="transform opacity-100 scale-100"
                                       leaveTo="transform opacity-0 scale-95"
                                     >
+                                      {/* Submenu items */}
                                       <Menu.Items className="absolute z-10 mt-2 w-48 origin-top-right rounded-md bg-[#171D35] py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
                                         {child.children.map((subChild) => (
                                           <div key={subChild.name}>
@@ -168,6 +171,7 @@ export default function Navbar() {
                                     </Transition>
                                   </Menu>
                                 ) : (
+                                 
                                   <Menu.Item key={child.name}>
                                     {({ active }) => (
                                       <NavLink
@@ -201,6 +205,7 @@ export default function Navbar() {
                       </NavLink>
                     )
                   )}
+                  {/* Contact Us link */}
                   <Link
                     to={routes.contact}
                     className="rounded-full bg-[#FFA500] px-8 py-3 text-base font-medium text-white hover:bg-[#FF9800]"
@@ -211,8 +216,10 @@ export default function Navbar() {
               </div>
             </div>
           </div>
+          {/* Mobile menu panel */}
           <Disclosure.Panel className="sm:hidden">
             <div className="space-y-1 px-2 pb-3 pt-2">
+              {/* Mobile menu items */}
               {navigation.map((item) =>
                 item.children ? (
                   <Menu as="div" key={item.name} className="relative">
@@ -220,6 +227,7 @@ export default function Navbar() {
                       {item.name}
                       <ChevronDownIcon className="h-5 w-5" aria-hidden="true" />
                     </Menu.Button>
+                    {/* Submenu transition */}
                     <Transition
                       as={React.Fragment}
                       enter="transition ease-out duration-100"
@@ -229,6 +237,7 @@ export default function Navbar() {
                       leaveFrom="transform opacity-100 scale-100"
                       leaveTo="transform opacity-0 scale-95"
                     >
+                      {/* Submenu items */}
                       <Menu.Items className="mt-2 space-y-1 rounded-md bg-gray-700 py-1">
                         {item.children.map((child) => (
                           <Menu.Item key={child.name}>
@@ -264,6 +273,7 @@ export default function Navbar() {
                   </Link>
                 )
               )}
+              {/* Contact Us link */}
               <Link
                 to={routes.contact}
                 className="block rounded-full bg-[#FFA500] px-3 py-2 text-base font-medium text-white hover:bg-[#FF9800]"

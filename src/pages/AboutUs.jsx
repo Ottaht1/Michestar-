@@ -265,7 +265,7 @@ const AboutPage = () => {
             <div className="flex flex-wrap -m-4 font-semibold text ">
               <div className="p-4 md:w-1/2 lg:w-1/3">
                 <div
-                  className="flex  rounded-lg h-full p-8 flex-col text-white bg-black opacity-50"
+                  className="flex  rounded-lg h-full p-8 flex-col text-white bg-black opacity-50 "
                   style={{
                     backgroundImage: `url(${rectangle1})`,
                     backgroundSize: "cover",
