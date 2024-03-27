@@ -419,7 +419,7 @@ const LandingPage = () => {
                     Officer on board to ensure compliance with GDPR and other
                     relevant regulations.
                   </p>
-                  <a className="mt-3 text-white border rounded-xl w-40 h-10 inline-flex  items-center">
+                  <a className="mt-3 text-white border rounded-xl inline-flex items-center px-4 py-2">
                     Read More
                     <svg
                       fill="none"
@@ -477,7 +477,7 @@ const LandingPage = () => {
                     identify vulnerabilities and gaps in your data protection
                     practices.
                   </p>
-                  <a className="mt-3 text-white border rounded-xl inline-flex items-center">
+                  <a className="mt-3 text-white border rounded-xl inline-flex items-center px-4 py-2">
                     Read More
                     <svg
                       fill="none"
@@ -526,7 +526,7 @@ const LandingPage = () => {
                     Compliance Training: We provide tailored training programs
                     to educate your employees on data privacy best practices.
                   </p>
-                  <a className="mt-3 text-white border rounded-xl inline-flex items-center">
+                  <a className="mt-3 text-white border rounded-xl inline-flex items-center px-4 py-2">
                     Read More
                     <svg
                       fill="none"

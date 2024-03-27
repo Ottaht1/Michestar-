@@ -70,3 +70,18 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
+
+.swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: stretch; /* Stretch the child items to fill the available height */
+}
+
+.swiper-slide > .item {
+  width: 100%;
+  height: 100%; /* Make each item occupy full height */
+}
+
+.swiper-slide > .item > div {
+  height: 100%; /* Ensures all cards have the same height */
+}
