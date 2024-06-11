@@ -28,7 +28,7 @@ export default function Footer() {
               </p>
             </div>
             <div className="mt-16 grid grid-cols-2 gap-8 xl:col-span-2 xl:mt-0">
-              <div className="md:grid md:grid-cols-2 md:gap-8">
+              <div className="md:grid md:grid-cols-2 md:gap-8 ml-28">
                 <div>
                   <ul role="list" className="mt-6 space-y-4 text-start">
                     {navigation.company.map((item) => (
