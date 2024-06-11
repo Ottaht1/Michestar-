@@ -35,7 +35,7 @@ export default function Footer() {
                       <li key={item.name}>
                         <a
                           href={item.href}
-                          className="leading-6 text-white text-xl font-medium hover:text-[#686868]"
+                          className="leading-6 text-white text-xl font-medium hover:text-[#FF9800]"
                         >
                           {item.name}
                         </a>
