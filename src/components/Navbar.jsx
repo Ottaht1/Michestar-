@@ -76,7 +76,9 @@ export default function Navbar() {
             <div className="relative flex h-16 items-center justify-between">
               <div className="flex flex-1 items-center justify-between">
                 <div className="flex flex-shrink-0 items-center">
+                  <Link to={routes.home}>
                   <img className="h-20 w-full" src={ILogo} alt="Your Company" />
+                  </Link>
                 </div>
                 <div className="sm:hidden">
                   {/* Mobile menu button moved to the far right */}

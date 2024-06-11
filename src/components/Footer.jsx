@@ -1,5 +1,6 @@
 import React from "react";
 import { ILogo } from "../utils/icons.utils";
+import { Link } from "react-router-dom";
 
 const navigation = {
   company: [
@@ -22,7 +23,9 @@ export default function Footer() {
         <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
           <div className="xl:grid xl:grid-cols-3 xl:gap-8">
             <div className="space-y-8">
+              <Link to="/">
               <img className="h-20" src={ILogo} alt="Company name" />
+              </Link>
               <p className="text-lg font-medium text-start text-white">
                 The Perfect Solution For all Protection
               </p>

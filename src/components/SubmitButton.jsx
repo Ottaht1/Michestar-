@@ -1,5 +1,6 @@
 // SubmitButton.js
 import React from "react";
+import PropTypes from "prop-types";
 
 const SubmitButton = ({ onClick }) => {
   return (
@@ -13,5 +14,10 @@ const SubmitButton = ({ onClick }) => {
     </div>
   );
 };
+
+SubmitButton.propTypes = {
+  onClick: PropTypes.func.isRequired,
+};
+
 
 export default SubmitButton;
