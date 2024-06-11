@@ -90,122 +90,130 @@ export default function Navbar() {
                     )}
                   </Disclosure.Button>
                 </div>
-                <div className="hidden sm:ml-6 sm:flex sm:space-x-4">
-                  {/* Rest of the navigation items */}
-                  {navigation.map((item) =>
-                    item.children ? (
-                      <Menu as="div" key={item.name} className="relative">
-                        <Menu.Button className="inline-flex items-center text-white hover:text-[#FFA500] px-8 py-3 text-base font-medium">
-                          {item.name}
-                          <ChevronDownIcon
-                            className="ml-2 h-5 w-5"
-                            aria-hidden="true"
-                          />
-                        </Menu.Button>
-                        {/* Submenu transition */}
-                        <Transition
-                          as={React.Fragment}
-                          enter="transition ease-out duration-100"
-                          enterFrom="transform opacity-0 scale-95"
-                          enterTo="transform opacity-100 scale-100"
-                          leave="transition ease-in duration-75"
-                          leaveFrom="transform opacity-100 scale-100"
-                          leaveTo="transform opacity-0 scale-95"
-                        >
-                          {/* Submenu items */}
-                          <Menu.Items className="absolute z-10 mt-2 w-96 origin-top-right rounded-md bg-[#171D35] py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
-                            {/* Added heading and subheading for "Services" dropdown */}
-                            {item.name === "Services" && (
-                              <div className="px-4 py-2">
-                                <h3 className="text-[#AECBFA] font-bold text-3xl">
-                                  Our Services
-                                </h3>
-                                <h6 className="text-white mt-2">What We Do</h6>
-                              </div>
-                            )}
-                            <div>
-                              {item.children.map((child) =>
-                                child.children ? (
-                                  <Menu
-                                    as="div"
-                                    key={child.name}
-                                    className="relative"
-                                  >
-                                    <Menu.Button className="inline-flex items-center text-white hover:text-[#FFA500] px-8 py-3 text-base font-medium">
-                                      {child.name}
-                                      <ChevronDownIcon
-                                        className="ml-2 h-5 w-5"
-                                        aria-hidden="true"
-                                      />
-                                    </Menu.Button>
-                                    {/* Submenu transition */}
-                                    <Transition
-                                      as={React.Fragment}
-                                      enter="transition ease-out duration-100"
-                                      enterFrom="transform opacity-0 scale-95"
-                                      enterTo="transform opacity-100 scale-100"
-                                      leave="transition ease-in duration-75"
-                                      leaveFrom="transform opacity-100 scale-100"
-                                      leaveTo="transform opacity-0 scale-95"
-                                    >
-                                      {/* Submenu items */}
-                                      <Menu.Items className="absolute z-10 mt-2 w-48 origin-top-right rounded-md bg-[#171D35] py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
-                                        {child.children.map((subChild) => (
-                                          <div key={subChild.name}>
-                                            <Menu.Item>
-                                              {({ active }) => (
-                                                <NavLink
-                                                  to={subChild.href}
-                                                  className={classNames(
-                                                    active ? "bg-gray-100" : "",
-                                                    "block px-4 py-2 text-sm text-white"
-                                                  )}
-                                                >
-                                                  {subChild.name}
-                                                </NavLink>
-                                              )}
-                                            </Menu.Item>
-                                          </div>
-                                        ))}
-                                      </Menu.Items>
-                                    </Transition>
-                                  </Menu>
-                                ) : (
-                                 
-                                  <Menu.Item key={child.name}>
-                                    {({ active }) => (
-                                      <NavLink
-                                        to={child.href}
-                                        className={classNames(
-                                          active ? "bg-gray-100" : "",
-                                          "block px-4 py-2 text-sm text-white"
-                                        )}
-                                      >
-                                        {child.name}
-                                      </NavLink>
-                                    )}
-                                  </Menu.Item>
-                                )
+                <div className="hidden sm:flex sm:flex-1 sm:items-center sm:justify-center">
+                  <div className="sm:flex sm:space-x-4">
+                    {/* Rest of the navigation items */}
+                    {navigation.map((item) =>
+                      item.children ? (
+                        <Menu as="div" key={item.name} className="relative">
+                          <Menu.Button className="inline-flex items-center text-white hover:text-[#FFA500] px-8 py-3 text-base font-medium">
+                            {item.name}
+                            <ChevronDownIcon
+                              className="ml-2 h-5 w-5"
+                              aria-hidden="true"
+                            />
+                          </Menu.Button>
+                          {/* Submenu transition */}
+                          <Transition
+                            as={React.Fragment}
+                            enter="transition ease-out duration-100"
+                            enterFrom="transform opacity-0 scale-95"
+                            enterTo="transform opacity-100 scale-100"
+                            leave="transition ease-in duration-75"
+                            leaveFrom="transform opacity-100 scale-100"
+                            leaveTo="transform opacity-0 scale-95"
+                          >
+                            {/* Submenu items */}
+                            <Menu.Items className="absolute z-10 mt-2 w-96 origin-top-right rounded-md bg-[#171D35] py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
+                              {/* Added heading and subheading for "Services" dropdown */}
+                              {item.name === "Services" && (
+                                <div className="px-4 py-2">
+                                  <h3 className="text-[#AECBFA] font-bold text-3xl">
+                                    Our Services
+                                  </h3>
+                                  <h6 className="text-white mt-2">
+                                    What We Do
+                                  </h6>
+                                </div>
                               )}
-                            </div>
-                          </Menu.Items>
-                        </Transition>
-                      </Menu>
-                    ) : (
-                      <NavLink
-                        key={item.name}
-                        to={item.href}
-                        className={`text-white hover:text-[#FFA500] px-8 py-3 text-base font-medium ${
-                          location.pathname === item.href
-                            ? " text-[#FFA500] "
-                            : "text-white"
-                        }`}
-                      >
-                        {item.name}
-                      </NavLink>
-                    )
-                  )}
-                  {/* Contact Us link */}
+                              <div>
+                                {item.children.map((child) =>
+                                  child.children ? (
+                                    <Menu
+                                      as="div"
+                                      key={child.name}
+                                      className="relative"
+                                    >
+                                      <Menu.Button className="inline-flex items-center text-white hover:text-[#FFA500] px-8 py-3 text-base font-medium">
+                                        {child.name}
+                                        <ChevronDownIcon
+                                          className="ml-2 h-5 w-5"
+                                          aria-hidden="true"
+                                        />
+                                      </Menu.Button>
+                                      {/* Submenu transition */}
+                                      <Transition
+                                        as={React.Fragment}
+                                        enter="transition ease-out duration-100"
+                                        enterFrom="transform opacity-0 scale-95"
+                                        enterTo="transform opacity-100 scale-100"
+                                        leave="transition ease-in duration-75"
+                                        leaveFrom="transform opacity-100 scale-100"
+                                        leaveTo="transform opacity-0 scale-95"
+                                      >
+                                        {/* Submenu items */}
+                                        <Menu.Items className="absolute z-10 mt-2 w-48 origin-top-right rounded-md bg-[#171D35] py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
+                                          {child.children.map((subChild) => (
+                                            <div key={subChild.name}>
+                                              <Menu.Item>
+                                                {({ active }) => (
+                                                  <NavLink
+                                                    to={subChild.href}
+                                                    className={classNames(
+                                                      active
+                                                        ? "hover:text-[#FFA500]"
+                                                        : "",
+                                                      "block px-4 py-2 text-sm text-white"
+                                                    )}
+                                                  >
+                                                    {subChild.name}
+                                                  </NavLink>
+                                                )}
+                                              </Menu.Item>
+                                            </div>
+                                          ))}
+                                        </Menu.Items>
+                                      </Transition>
+                                    </Menu>
+                                  ) : (
+                                    <Menu.Item key={child.name}>
+                                      {({ active }) => (
+                                        <NavLink
+                                          to={child.href}
+                                          className={classNames(
+                                            active
+                                              ? "hover:text-[#FFA500]"
+                                              : "",
+                                            "block px-4 py-2 text-sm text-white"
+                                          )}
+                                        >
+                                          {child.name}
+                                        </NavLink>
+                                      )}
+                                    </Menu.Item>
+                                  )
+                                )}
+                              </div>
+                            </Menu.Items>
+                          </Transition>
+                        </Menu>
+                      ) : (
+                        <NavLink
+                          key={item.name}
+                          to={item.href}
+                          className={`text-white hover:text-[#FFA500] px-8 py-3 text-base font-medium ${
+                            location.pathname === item.href
+                              ? " text-[#FFA500] "
+                              : "text-white"
+                          }`}
+                        >
+                          {item.name}
+                        </NavLink>
+                      )
+                    )}
+                  </div>
+                </div>
+                <div className="hidden sm:flex sm:items-center">
                   <Link
                     to={routes.contact}
                     className="rounded-full bg-[#FFA500] px-8 py-3 text-base font-medium text-white hover:bg-[#FF9800]"
@@ -223,7 +231,7 @@ export default function Navbar() {
               {navigation.map((item) =>
                 item.children ? (
                   <Menu as="div" key={item.name} className="relative">
-                    <Menu.Button className="flex w-full items-center justify-between rounded-md px-3 py-2 text-base font-medium text-white hover:bg-gray-700 hover:text-white">
+                    <Menu.Button className="inline-flex items-center text-white hover:text-[#FFA500] px-8 py-3 text-base font-medium">
                       {item.name}
                       <ChevronDownIcon className="h-5 w-5" aria-hidden="true" />
                     </Menu.Button>
@@ -238,7 +246,7 @@ export default function Navbar() {
                       leaveTo="transform opacity-0 scale-95"
                     >
                       {/* Submenu items */}
-                      <Menu.Items className="mt-2 space-y-1 rounded-md bg-gray-700 py-1">
+                      <Menu.Items className="mt-2 space-y-1 rounded-md bg-gray-900 hover:text-[#FFA500] py-1">
                         {item.children.map((child) => (
                           <Menu.Item key={child.name}>
                             {({ active }) => (
@@ -276,7 +284,7 @@ export default function Navbar() {
               {/* Contact Us link */}
               <Link
                 to={routes.contact}
-                className="block rounded-full bg-[#FFA500] px-3 py-2 text-base font-medium text-white hover:bg-[#FF9800]"
+                className="block mx-auto rounded-full w-40 bg-[#FFA500] px-3 py-2 text-base font-medium text-white hover:bg-[#FF9800]"
               >
                 Contact Us
               </Link>

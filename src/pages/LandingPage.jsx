@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import landingpagewoman from "../assets/landingpagewoman.svg";
 import landingpageman from "../assets/landingpageman.svg";
 import image1 from "../assets/Paymi.svg";
@@ -11,7 +12,6 @@ import "swiper/css/pagination";
 import { Pagination } from "swiper/modules";
 import image from "../assets/background.svg";
 import Eclipse from "../assets/Eclipse.svg";
-import pngtree from "../assets/pngtreegradient.svg";
 import persona1 from "../assets/images/tunde.svg";
 import persona2 from "../assets/images/femi.svg";
 
@@ -37,9 +37,12 @@ const LandingPage = () => {
               automation <br /> and analysis.
             </p>
             <div className="flex justify-center">
-              <button className="inline-flex text-white border-2 border-gray-400 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg">
+              <Link
+                to="/contact"
+                className="inline-flex text-white hover:text-[#FFA500] border-2 border-gray-400 py-2 px-6 focus:outline-none rounded text-lg"
+              >
                 Contact Us
-              </button>
+              </Link>
             </div>
           </div>
           <div className="lg:max-w-xl lg:w-full md:w-3/4 w-full">
@@ -350,7 +353,7 @@ const LandingPage = () => {
               />
             </div>
           </div>
-          <div className="flex flex-wrap -m-4 ">
+          <div className="flex flex-wrap -m-4  ">
             <div className="p-4 md:w-1/3 ">
               <div className="flex  bg-[#2A2354] rounded-lg h-full p-8 flex-col">
                 <div className="flex items-center mb-3">
@@ -419,7 +422,7 @@ const LandingPage = () => {
                     Officer on board to ensure compliance with GDPR and other
                     relevant regulations.
                   </p>
-                  <a className="mt-3 text-white border rounded-xl inline-flex items-center px-4 py-2">
+                  <a className="mt-3 text-white hover:text-[#FFA500] border rounded-xl inline-flex items-center px-4 py-2">
                     Read More
                     <svg
                       fill="none"
@@ -477,7 +480,7 @@ const LandingPage = () => {
                     identify vulnerabilities and gaps in your data protection
                     practices.
                   </p>
-                  <a className="mt-3 text-white border rounded-xl inline-flex items-center px-4 py-2">
+                  <a className="mt-3 text-white hover:text-[#FFA500] border rounded-xl inline-flex items-center px-4 py-2">
                     Read More
                     <svg
                       fill="none"
@@ -526,7 +529,7 @@ const LandingPage = () => {
                     Compliance Training: We provide tailored training programs
                     to educate your employees on data privacy best practices.
                   </p>
-                  <a className="mt-3 text-white border rounded-xl inline-flex items-center px-4 py-2">
+                  <a className="mt-3 text-white hover:text-[#FFA500] border rounded-xl inline-flex items-center px-4 py-2">
                     Read More
                     <svg
                       fill="none"

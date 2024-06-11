@@ -1,17 +1,16 @@
-const environment = {}
+const environment = {};
 
-export const backendUrl = import.meta.env.VITE_API_ENDPOINT
+export const backendUrl = import.meta.env.VITE_API_ENDPOINT;
 
 const routes = {
-    home: '/',
-    about: '/about',
-    services: '/services',
-    contact:'/contact',
-}
-
+  home: "/",
+  about: "/about",
+  services: "/services",
+  contact: "/contact",
+};
 
 environment.developement = {
-    routes
-}
+  routes,
+};
 
-export default environment['developement' ]
+export default environment["developement"];

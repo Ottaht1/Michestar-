@@ -3,9 +3,9 @@ import { ILogo } from "../utils/icons.utils";
 
 const navigation = {
   company: [
-    { name: "About Us", href: "#" },
-    { name: "Services", href: "#" },
-    { name: "Contact Us", href: "#" },
+    { name: "About Us", href: "/about" },
+    { name: "Services", href: "/services/services1" },
+    { name: "Contact Us", href: "/contact" },
   ],
 };
 
