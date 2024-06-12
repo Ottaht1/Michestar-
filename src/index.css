@@ -26,6 +26,21 @@ a {
   color: #FFA500;
 } */
 
+/* Default dark mode styles */
+body {
+  background-color: #1a202c; 
+  color: #ffffff; 
+}
+
+/* Light mode styles */
+@media (prefers-color-scheme: light) {
+  body {
+      background-color: #1a202c; 
+      color: #ffffff; 
+  }
+}
+
+
 body {
   margin: 0;
   /* display: flex;
