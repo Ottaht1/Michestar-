@@ -1,10 +1,87 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 
 const ContactUsPage = () => {
+  const [formValues, setFormValues] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    organization: "",
+    message: "",
+  });
+
+  const [formErrors, setFormErrors] = useState({});
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormValues({ ...formValues, [name]: value });
+
+    // Clear the error for the specific field being updated
+    setFormErrors({ ...formErrors, [name]: "" });
+  };
+
+  const validate = (values) => {
+    let errors = {};
+
+    if (!values.name.trim()) {
+      errors.name = "Name is required";
+    }
+
+    if (!values.email) {
+      errors.email = "Email is required";
+    } else if (!/\S+@\S+\.\S+/.test(values.email)) {
+      errors.email = "Email address is invalid";
+    }
+
+    if (!values.phone) {
+      errors.phone = "Phone number is required";
+    } else if (!/^\d{10,15}$/.test(values.phone)) {
+      errors.phone = "Phone number is invalid";
+    }
+
+    if (!values.organization.trim()) {
+      errors.organization = "Organization is required";
+    }
+
+    if (!values.message.trim()) {
+      errors.message = "Message is required";
+    }
+
+    return errors;
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const errors = validate(formValues);
+    setFormErrors(errors);
+
+    if (Object.keys(errors).length === 0) {
+      setIsSubmitting(true);
+    } else {
+      setIsSubmitting(false);
+    }
+  };
+
+  useEffect(() => {
+    if (isSubmitting && Object.keys(formErrors).length === 0) {
+      // Placeholder for actual form submission logic (e.g., API call)
+      console.log("Form submitted successfully", formValues);
+      // Reset form after submission
+      setFormValues({
+        name: "",
+        email: "",
+        phone: "",
+        organization: "",
+        message: "",
+      });
+      setIsSubmitting(false);
+    }
+  }, [formErrors, isSubmitting, formValues]);
+
   return (
     <>
       <div className="flex mt-20 flex-col md:flex-row gap-6 items-center justify-center">
-        <div className="flex bg-gradient-to-tr from-[#30395f] to-[#262831] rounded-lg p-4 flex-col w-full md:w-60 h-[10rem] md:self-center">
+      <div className="flex bg-gradient-to-tr from-[#30395f] to-[#262831] rounded-lg p-4 flex-col w-full md:w-60 h-[10rem] md:self-center">
           <div className="items-center mb-3">
             <h2 className="text-gray-900 text-lg title-font font-medium">
               Location
@@ -55,18 +132,24 @@ const ContactUsPage = () => {
                     Questions And We Will Respond To You In One Business Day.
                   </p>
                 </div>
-                <form className="mt-20 text-start ">
-                  <div className="flex flex-wrap -mx-3 mb-6 ">
+                <form className="mt-20 text-start" onSubmit={handleSubmit}>
+                  <div className="flex flex-wrap -mx-3 mb-6">
                     <div className="w-full md:w-1/2 px-3 mb-6 md:mb-0">
                       <label className="block mb-2">
-                        <h3 className="text-gray-700 dark:text-gray-300 ">
+                        <h3 className="text-gray-700 dark:text-gray-300">
                           Name
                         </h3>
                         <input
                           type="text"
-                          className="form-input bg-gradient-to-b from-[#7C76CB] to-[#3E3B65]/50  backdrop-blur-lg w-full px-4 py-3 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-600 hover:ring-1 hover:ring-purple-600 transition-all duration-300"
+                          name="name"
+                          value={formValues.name}
+                          onChange={handleChange}
+                          className="form-input bg-gradient-to-b from-[#7C76CB] to-[#3E3B65]/50 backdrop-blur-lg w-full px-4 py-3 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-600 hover:ring-1 hover:ring-purple-600 transition-all duration-300"
                           placeholder="Name"
                         />
+                        {formErrors.name && (
+                          <p className="text-red-600">{formErrors.name}</p>
+                        )}
                       </label>
                     </div>
                     <div className="w-full md:w-1/2 px-3">
@@ -76,9 +159,15 @@ const ContactUsPage = () => {
                         </h3>
                         <input
                           type="email"
-                          className="form-input bg-gradient-to-b from-[#7C76CB] to-[#3E3B65]/50  backdrop-blur-md w-full px-4 py-3 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-600 hover:ring-1 hover:ring-purple-600 transition-all duration-300"
+                          name="email"
+                          value={formValues.email}
+                          onChange={handleChange}
+                          className="form-input bg-gradient-to-b from-[#7C76CB] to-[#3E3B65]/50 backdrop-blur-md w-full px-4 py-3 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-600 hover:ring-1 hover:ring-purple-600 transition-all duration-300"
                           placeholder="Email address"
                         />
+                        {formErrors.email && (
+                          <p className="text-red-600">{formErrors.email}</p>
+                        )}
                       </label>
                     </div>
                   </div>
@@ -90,9 +179,15 @@ const ContactUsPage = () => {
                         </h3>
                         <input
                           type="tel"
-                          className="form-input bg-gradient-to-b from-[#7C76CB] to-[#3E3B65]/50  backdrop-blur-md w-full px-4 py-3 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-600 hover:ring-1 hover:ring-purple-600 transition-all duration-300"
+                          name="phone"
+                          value={formValues.phone}
+                          onChange={handleChange}
+                          className="form-input bg-gradient-to-b from-[#7C76CB] to-[#3E3B65]/50 backdrop-blur-md w-full px-4 py-3 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-600 hover:ring-1 hover:ring-purple-600 transition-all duration-300"
                           placeholder="Phone Number"
                         />
+                        {formErrors.phone && (
+                          <p className="text-red-600">{formErrors.phone}</p>
+                        )}
                       </label>
                     </div>
                     <div className="w-full md:w-1/2 px-3">
@@ -102,27 +197,40 @@ const ContactUsPage = () => {
                         </h3>
                         <input
                           type="text"
-                          className="form-input bg-gradient-to-b from-[#7C76CB] to-[#3E3B65]/50  backdrop-blur-md w-full px-4 py-3 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-600 hover:ring-1 hover:ring-purple-600 transition-all duration-300"
+                          name="organization"
+                          value={formValues.organization}
+                          onChange={handleChange}
+                          className="form-input bg-gradient-to-b from-[#7C76CB] to-[#3E3B65]/50 backdrop-blur-md w-full px-4 py-3 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-600 hover:ring-1 hover:ring-purple-600 transition-all duration-300"
                           placeholder="Organization"
                         />
+                        {formErrors.organization && (
+                          <p className="text-red-600">{formErrors.organization}</p>
+                        )}
                       </label>
                     </div>
                   </div>
-                  <div className="w-full  px-3 mb-6">
+                  <div className="w-full px-3 mb-6">
                     <label className="block mb-2">
                       <h3 className="text-gray-700 dark:text-gray-300">
                         Message
                       </h3>
                       <textarea
-                        className="form-textarea bg-gradient-to-b from-[#7C76CB] to-[#3E3B65]/50  backdrop-blur-md w-full px-4 py-3 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-600 hover:ring-1 hover:ring-purple-600 transition-all duration-300"
+                        name="message"
+                        value={formValues.message}
+                        onChange={handleChange}
+                        className="form-textarea bg-gradient-to-b from-[#7C76CB] to-[#3E3B65]/50 backdrop-blur-md w-full px-4 py-3 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-600 hover:ring-1 hover:ring-purple-600 transition-all duration-300"
                         rows="4"
                         placeholder="Your message"
                       ></textarea>
+                      {formErrors.message && (
+                        <p className="text-red-600">{formErrors.message}</p>
+                      )}
                     </label>
                   </div>
                   <div className="flex">
                     <button
-                      type="button"
+                      type="submit"
+                      disabled={isSubmitting}
                       className="submit-button bg-gradient-to-b from-[#5EFF77] to-[#5EB1FF]/50 w-32 rounded-md py-3 px-6 text-white font-semibold shadow-md hover:shadow-lg transition-all duration-300"
                     >
                       Send
